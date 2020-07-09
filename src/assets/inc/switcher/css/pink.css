@@ -1,0 +1,68 @@
+/*
+Sty;esheet name: Pink.css
+Theme URI: https://themeies.com
+Author URI: https://themeies.com/
+ */
+ /* Gradient Background */ 
+.banner .hero-slider .item::before, .header .menu .dropdown-menu li a:hover, .btn-default, .featured-offer .owl-carousel .owl-nav button, .we-feature .owl-carousel .owl-nav button, .process li:hover .icon-bg,
+.bg-blue, .callto-action,.foo-top ul.social-media li a i,.modalBody .outerblock, .modalBody .data-nav ul li.active,.btn-filled, .testimonial::before, .sidebar .tagcloud a,
+.header .menu li a:hover i.fa-user, .hero-section:before, .sidebar .Profile-menu ul li a, .sidebar .Profile-menu ul li.active a:before, #notifications-box .custom-control-label::before, .transaction-area .items:hover,
+.recharge-order-page .nav-pills .nav-item .nav-link.active, .recharge-order-page .products .row a:hover, .recharge-order-page .products .row a.selected, button.close,.account-card,
+.main-form.all-fillters-area .bill-items li.active, .daterangepicker .ranges li.active
+{
+    background-image: radial-gradient( circle farthest-corner at 12.3% 19.3%,  #5558da 0%, #5fd1f9 100.2% );
+}
+
+/* // Solid background */
+.main-form .bill-items li a, .main-form ul.morebtn li a, .main-form ul.morebtn li ul li a, .custom-control-input:checked~.custom-control-label::before, .btn-default:hover, .we-work .portfolioITems .filters .button-group .button.is-checked, .foo-top ul.social-media li a:hover i
+, .btn-filled:hover, .pagination .current-page, .sidebar .tagcloud a:hover, .sidebar .Profile-menu ul li.active a, .main-form.all-fillters-area ul.morebtn li ul li, .page-item.active .page-link
+
+{
+    background: linear-gradient( 89.5deg,  #5558da 0.2%, #5558da 90.6% );
+}
+/* // Secoundery Background Color:  */
+.we-work .portfolioITems .filters .button-group .button{
+    background: linear-gradient( 89.5deg,  #5fd1f9 0.2%, #5fd1f9 90.6% );
+
+}
+/* // Color */
+.main-form .bill-items li.active a, .main-form .bill-items li a:hover, a, .header .menu li a:hover, .tagline, .iconBox i, .widget-navigation li a:hover, .footer .copyright a, .footer .copyright i,
+.page-feature .breadcrumb a, .sl-form .notice a, .post-item .post-content h3 a, .categories li a:hover, .meta-tags a:hover, .meta-tags span:hover, .pagination a:hover, .pagination span:hover,
+.comments .comments-body a, .text-primary, .profile-area a.btn-link.pbtn, .btn-link, .infoItems a, .main-form.all-fillters-area .bill-items li
+{
+    color: #5558da ;    
+}
+.text-primary{
+    color: #5558da !important;
+}
+/* // Secoundery Color:  */
+.iconBox:hover i, .post-item .post-content h3 a:hover, a:hover, .recharge-order-page .tab-content .tab-pane .invoice-option a.invoice-btn, .main-form.all-fillters-area ul.morebtn li ul li:hover
+
+
+{
+    color: #5fd1f9 ;
+}
+/* // Text Clipping */
+.header .nav-header .brand {
+    background: linear-gradient( 89.5deg,  #5558da 0.2%, #5fd1f9 90.6% );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+/* // Border */
+.custom-control-input:checked~.custom-control-label::before, .pagination .current-page, .pagination a:hover, .pagination span:hover,
+.admin-heading, .recharge-order-page .tab-content .tab-pane .operators .single-operator .op-logo.selected, .page-item.active .page-link
+{
+    border-color:  #5558da;
+}
+/******************
+ * SWITCHER STYLE *
+ ******************/
+.switcherContent{
+    border-bottom: 1px solid #5558da
+}
+.switcher .switcherContents header,.switcher .switcherShowHide,.tempLayout ul .active-layout,.tempLayout ul li:hover{
+    background-image: linear-gradient(to right, #5558da 0%, #5fd1f9 100%);
+}
+.tempLayout ul li{
+    border: 1px solid  #5558da
+}
