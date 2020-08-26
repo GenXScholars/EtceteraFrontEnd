@@ -37,13 +37,15 @@
         <div class="nav justify-content-center">
             <div class="col-md-12"  >
                 <ul class="bill-items nav nav-tabs" id="teleporter" style="width:80%; margin:0 auto">
-                    <li class="nav-item active"><a routerLink = '/mobile' class="nav-link"><i class="fas fa-mobile"></i> Mobile</a></li>
-                    <li class="nav-item"><a routerLink = '/electricity'  class="nav-link"><i class="fas fa-network-wired"></i>Electricity</a></li>
-                    <li class="nav-item"><a routerLink = '/gotv'  class="nav-link"><i class="fas fa-tv"></i>GoTV</a></li>
-                    <li class="nav-item"><a routerLink = '/dstv'  class="nav-link"><i class="fas fa-tv"></i>DSTV</a></li>
-                    <li class="nav-item"><a routerLink = '/bankTransfer'  class="nav-link"><i class="fas fa-broadcast-tower"></i>Bank</a></li>
-
-
+                    <li class="nav-item active"><a routerLink = '/mobile' class="nav-link"><i class="fas fa-mobile"></i> AIRTIME</a></li>
+                    <li class="nav-item ynav"><a routerLink = '/data'  class="nav-link"><i class="fa fa-wifi" aria-hidden="true"></i>DATA</a></li>
+                    <li class="nav-item ynav"><a routerLink = '/cable'  class="nav-link"><i class="fas fa-tv"></i>CABLE TV</a></li>
+                    <li class="nav-item ynav"><a routerLink = '/electricity' id="electricity" class="nav-link"><i class="fa fa-light"></i>ELECTRICITY</a></li>
+                    <li class="nav-item ynav"><a routerLink = '/bankTransfer'  class="nav-link">SHOPPING</a></li>
+                    <li class="nav-item ynav"><a routerLink = '/wallet'  class="nav-link">WALLET</a></li>
+                    <li class="nav-item ynav"><a routerLink = '/education' id="education"  class="nav-link">EDUCATION</a></li>
+                    <li class="nav-item ynav"><a routerLink = '/tickets'  class="nav-link">TICKETS</a></li>
+                    <li class="nav-item ynav"><a routerLink = '/'  class="nav-link">VOUCHERS</a></li>
                 </ul>
 
 
@@ -63,7 +65,7 @@
                             <input id="postpaid" name="rechargProbillpayment" class="custom-control-input" required="" type="radio">
                             <label class="custom-control-label" for="postpaid">Postpaid</label>
                         </div>
-                        <a href="#" data-target="#view-plans" data-toggle="modal" class="view-plans">View Plans</a>
+
                     </div>
 
                     <div class="form-row">
@@ -73,26 +75,13 @@
                         <div class="col-md-6 col-lg-3 form-group">
                             <select class="custom-select" id="operator" required="">
                                 <option value="">Select Your Operator</option>
-                                <option>GramenPhone</option>
-                                <option>Banlalink</option>
+                                <option>MTN</option>
+                                <option>GLO</option>
                                 <option>Airtel</option>
-                                <option>Robi</option>
-                                <option>Citycell</option>
-                                <option>Xirosoft</option>
+                                <option>ETISALAT</option>
                             </select>
                         </div>
-                        <div class="col-md-6 col-lg-2 form-group">
-                            <select class="custom-select" id="operator" required="">
-                                <option value="">Select Circle</option>
-                                <option>Asam</option>
-                                <option>Gujarat</option>
-                                <option>Dheli</option>
-                                <option>Chennai</option>
-                                <option>Kolkata</option>
-                                <option>Bombuy</option>
-                                <option>Panjab</option>
-                            </select>
-                        </div>
+
                         <div class="col-md-6 col-lg-2">
                             <div class="form-group input-group">
                                 <div class="input-group-prepend"> <span class="input-group-text">$</span> </div>
@@ -112,55 +101,6 @@
 <!-- Main form end -->
 
 
-<!-- Start Featured offer Section -->
-<section class="featured-offer bg-offwhite">
-    <div class="container">
-        <div class="row">
-            <div class=" col-md-12 m-auto text-left">
-                <div class="sec-heading mb-3">
-                    <span class="tagline">Featured Offer</span>
-                    <!-- <h3 class="sec-title"> About Our featured offer</h3> -->
-                </div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-md-12 m-auto">
-                <div class="featuredOfferBox">
-                    <div class="featuredOffer-caro fc-1 owl-carousel" data-slide="5" data-return="true">
-                        <a href="#" class="fItems">
-                            <img src="/assets/images/sm-banner/1.jpg" alt="" class="featuredimg">
-                        </a>
-                        <a href="#" class="fItems">
-                            <img src="/assets/images/sm-banner/2.jpg" alt="" class="featuredimg">
-                        </a>
-                        <a href="#" class="fItems">
-                            <img src="/assets/images/sm-banner/3.jpg" alt="" class="featuredimg">
-                        </a>
-                        <a href="#" class="fItems">
-                            <img src="/assets/images/sm-banner/4.jpg" alt="" class="featuredimg">
-                        </a>
-                        <a href="#" class="fItems">
-                            <img src="/assets/images/sm-banner/5.jpg" alt="" class="featuredimg">
-                        </a>
-                        <a href="#" class="fItems">
-                            <img src="/assets/images/sm-banner/6.jpg" alt="" class="featuredimg">
-                        </a>
-                        <a href="#" class="fItems">
-                            <img src="/assets/images/sm-banner/7.jpg" alt="" class="featuredimg">
-                        </a>
-                        <a href="#" class="fItems">
-                            <img src="/assets/images/sm-banner/8.jpg" alt="" class="featuredimg">
-                        </a>
-                        <a href="#" class="fItems">
-                            <img src="/assets/images/sm-banner/9.jpg" alt="" class="featuredimg">
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-<!-- End Featured offer Section -->
 
 <!-- Feature section start -->
 <section class="feature ">
@@ -170,21 +110,21 @@
                 <div class="iconBox">
                     <i class="fas fa-globe"></i>
                     <h5><a href="#">Worldwide Service</a></h5>
-                    <p>Can their wherein own upon female without saying made in second them male own you. Him fill good last seasons hath moved and</p>
+                    <p>We offer international transfer through a secured and fast wallet system</p>
                 </div>
             </div>
             <div class="col-md-4">
                 <div class="iconBox">
                     <i class="fas fa-hand-holding-usd"></i>
                     <h5><a href="#">Cheapest Price</a></h5>
-                    <p>Can their wherein own upon female without saying made in second them male own you. Him fill good last seasons hath moved and</p>
+                    <p>Our price is unbeatable</p>
                 </div>
             </div>
             <div class="col-md-4">
                 <div class="iconBox">
                     <i class="fas fa-times-circle"></i>
                     <h5><a href="#">Easy Cancellation</a></h5>
-                    <p>Can their wherein own upon female without saying made in second them male own you. Him fill good last seasons hath moved and</p>
+                    <p>Cancel transactions without questions</p>
                 </div>
             </div>
         </div>
@@ -192,95 +132,6 @@
 </section>
 <!-- Feature section end -->
 
-
-<!-- Start We feature Section -->
-<section class="we-feature bg-offwhite">
-    <div class="container">
-        <div class="row">
-            <div class=" col-md-12 m-auto text-center">
-                <div class="sec-heading mb-4">
-                    <span class="tagline">featured</span>
-                    <h3 class="sec-title"> We were featured on </h3>
-                </div>
-            </div>
-        </div>
-        <div class="cl row">
-            <ul class="col-md-12 nav nav-tabs cmn-carousel owl-carousel cspage">
-                <li class="item">
-                    <button data-tag="tab1" class="caroBtn single-evnt caro-item active">
-                        <img src="/assets/images/protal/client01.png" alt="">
-                    </button>
-                </li>
-                <li class="item">
-                    <button data-tag="tab2" class="caroBtn single-evnt caro-item">
-                        <img src="/assets/images/protal/client02.png" alt="">
-                    </button>
-                </li>
-                <li class="item">
-                    <button data-tag="tab3" class="caroBtn single-evnt caro-item">
-                        <img src="/assets/images/protal/client03.png" alt="">
-                    </button>
-                </li>
-                <li class="item">
-                    <button data-tag="tab4" class="caroBtn single-evnt caro-item">
-                        <img src="/assets/images/protal/client04.png" alt="">
-                    </button>
-                </li>
-                <li class="item">
-                    <button data-tag="tab5" class="caroBtn single-evnt caro-item">
-                        <img src="/assets/images/protal/client05.png" alt="">
-                    </button>
-                </li>
-                <li class="item">
-                    <button data-tag="tab6" class="caroBtn single-evnt caro-item">
-                        <img src="/assets/images/protal/client06.png" alt="">
-                    </button>
-                </li>
-            </ul>
-
-            <div class="cmn-caro-tab">
-                <div id="tab1C" class="tcontent active">
-                    <div class="single-event-con">
-                        <p>Standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33 from "de Finibus Bonorum et Malorum" by Cicero are also reproduced in their exact original form, accompanied by English versions from the 1914 translation by H. Rackham.</p>
-                        <a href="#" class="btn btn-default">Learn More</a>
-                    </div>
-                </div>
-                <div id="tab2C" class="tcontent">
-                    <div class="single-event-con">
-                        <p>Standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33 from "de Finibus Bonorum et Malorum" by Cicero are also reproduced in their exact original form, accompanied by English versions from the 1914 translation by H. Rackham.</p>
-                        <a href="#" class="btn btn-default">Learn More</a>
-                    </div>
-                </div>
-                <div id="tab3C" class="tcontent">
-                    <div class="single-event-con">
-                        <p>Chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33 from "de Finibus Bonorum et Malorum" by Cicero are also reproduced in their exact original form, accompanied by English versions from the 1914 translation by H. Rackham.</p>
-                        <a href="#" class="btn btn-default">Learn More</a>
-                    </div>
-                </div>
-                <div id="tab4C" class="tcontent">
-                    <div class="single-event-con">
-                        <p>Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33 from "de Finibus Bonorum et Malorum" by Cicero are also reproduced in their exact original form, accompanied by English versions from the 1914 translation by H. Rackham.</p>
-                        <a href="#" class="btn btn-default">Learn More</a>
-                    </div>
-                </div>
-                <div id="tab5C" class="tcontent">
-                    <div class="single-event-con">
-                        <p>Chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33 from "de Finibus Bonorum et Malorum" by Cicero are also reproduced in their exact original form, accompanied by English versions from the 1914 translation by H. Rackham.</p>
-                        <a href="#" class="btn btn-default">Learn More</a>
-                    </div>
-                </div>
-
-                <div id="tab6C" class="tcontent">
-                    <div class="single-event-con">
-                        <p>Standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33 from "de Finibus Bonorum et Malorum" by Cicero are also reproduced in their exact original form, accompanied by English versions from the 1914 translation by H. Rackham.</p>
-                        <a href="#" class="btn btn-default">Learn More</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-<!-- End  We feature Section -->
 
 <!-- Work section start -->
 <section class="work bg-bluewhite">
@@ -301,22 +152,22 @@
                             <span class="icon-bg">
                                 <i class="ti-signal"></i>
                             </span>
-                            <h5>Phone Recharge & DTH</h5>
-                            <p>Their over fly creature first fish fruitful fourth our very thing said man our land</p>
+                            <h5>Phone Recharge & Data Top Up</h5>
+                            <p>Recharge your mobile phones without stress or network delay</p>
                         </li>
                         <li class="card">
                             <span class="icon-bg">
                                 <i class="ti-calendar"></i>
                             </span>
                             <h5>Bill Payments</h5>
-                            <p>Their over fly creature first fish fruitful fourth our very thing said man our land</p>
+                            <p>Pay Electricity bills BEDC, EKO ELECTRIC</p>
                         </li>
                         <li class="card">
                             <span class="icon-bg">
                                 <i class="ti-user"></i>
                             </span>
                             <h5>Bus Tickets</h5>
-                            <p>Their over fly creature first fish fruitful fourth our very thing said man our land</p>
+                            <p>Travel like a boss by booking bus tickets in advance</p>
                         </li>
                     </ul>
                 </div>
@@ -329,22 +180,15 @@
                             <span class="icon-bg">
                                 <i class="ti-palette"></i>
                             </span>
-                            <h5>Shopping in Local Stores </h5>
-                            <p>Their over fly creature first fish fruitful fourth our very thing said man our land</p>
-                        </li>
-                        <li class="card">
-                            <span class="icon-bg">
-                                <i class="ti-home"></i>
-                            </span>
-                            <h5>Boost your finances</h5>
-                            <p>Their over fly creature first fish fruitful fourth our very thing said man our land</p>
+                            <h5>Cheapay Shop </h5>
+                            <p>Buy cheap items for our shops with wallets</p>
                         </li>
                         <li class="card">
                             <span class="icon-bg">
                                 <i class="ti-layers"></i>
                             </span>
-                            <h5>Transfer money to Bank</h5>
-                            <p>Their over fly creature first fish fruitful fourth our very thing said man our land</p>
+                            <h5>Transfer money to Bank </h5>
+                            <p>Transfer money to any bank and from any bank</p>
                         </li>
                     </ul>
                 </div>
@@ -362,7 +206,7 @@
             <div class=" col-md-12 m-auto text-center">
                 <div class="sec-heading mb-4">
                     <span class="tagline">Service provider</span>
-                    <h3 class="sec-title">Our Trusted Partners</h3>
+                    <h3 class="sec-title">Become Our Trusted Partner</h3>
                 </div>
             </div>
         </div>
@@ -635,7 +479,7 @@
             <div class="col leftside  text-md-right text-sm-center">
                 <div class="app-inner-block">
                     <div class="contentBox">
-                        <h3>Go Probill - Download the IOS Super App </h3>
+                        <h3>Go Vinebill - Download the IOS Super App </h3>
                         <p>Download the app now &amp; make convenience a part of your life.</p>
                         <a title="Google Play" target="_blank" href="#" class="btn-google-store">
                             <img src="/assets/images/app/app-store.png" alt="" class="googleplay">
@@ -650,7 +494,7 @@
             <div class="col rightside">
                 <div class="app-inner-block text-md-left text-sm-center">
                     <div class="contentBox">
-                        <h3>Go Probill - Download the Android Super App </h3>
+                        <h3>Go Vinebill - Download the Android Super App </h3>
                         <p>Download the app now &amp; start earning <br>smartly.</p>
                         <a title="Google Play" target="_blank" href="#" class="btn-google-store">
                             <img src="/assets/images/app/google-play-store.png" alt="" class="googleplay">

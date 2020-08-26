@@ -206,7 +206,13 @@
 
 @media screen and (min-width: 600px) {
 
-
+  .vlogo{
+    position:relative;
+    top:-18%;
+    width:auto;
+    height:auto;
+    line-height: 4rem;
+  }
 .customNav {
   width: calc(100/6);
   border-left: 1px solid black;
@@ -226,4 +232,14 @@
 
 #loginBtn {
   border:none;
+}
+
+// styling the logo
+
+.vlogo{
+  position:absolute;
+  top:6%;
+  width:8rem;
+  height:auto;
+  line-height: 4rem;
 }
