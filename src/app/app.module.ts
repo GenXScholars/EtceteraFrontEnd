@@ -20,6 +20,7 @@ import { UserDashboardModule } from './user-dashboard/user-dashboard.module';
 import { FixedNavComponent } from './components/fixed-nav/fixed-nav.component';
 import { FaqComponent } from './components/faq/faq.component';
 import { TermsComponent } from './components/terms/terms.component';
+import { NotFoundPageComponent } from './components/not-found-page/not-found-page.component';
 
 
 
@@ -41,6 +42,7 @@ import { TermsComponent } from './components/terms/terms.component';
     FixedNavComponent,
     FaqComponent,
     TermsComponent,
+    NotFoundPageComponent,
   ],
   imports: [
     BrowserModule,
