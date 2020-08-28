@@ -12,6 +12,7 @@ import { ContactComponent } from './components/contact/contact.component';
 import { AboutComponent } from './components/about/about.component';
 import { FaqComponent } from './components/faq/faq.component';
 import { TermsComponent } from './components/terms/terms.component';
+import { NotFoundPageComponent } from './components/not-found-page/not-found-page.component';
 
 
 
@@ -41,7 +42,8 @@ const routes: Routes = [
     path: '',
     redirectTo: '',
     pathMatch: 'full'
-  }
+  },
+  { path: '**', component: NotFoundPageComponent },
 ];
 
 @NgModule({
