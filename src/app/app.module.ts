@@ -20,7 +20,10 @@ import { UserDashboardModule } from './user-dashboard/user-dashboard.module';
 import { FixedNavComponent } from './components/fixed-nav/fixed-nav.component';
 import { FaqComponent } from './components/faq/faq.component';
 import { TermsComponent } from './components/terms/terms.component';
-
+import {SliderComponent} from './components/slider/slider.component';
+import {DatabundleComponent} from './components/databundle/databundle.component';
+import {MidnavComponent} from './components/midnav/midnav.component';
+import {TvComponent} from './components/tv/tv.component';
 
 
 @NgModule({
@@ -41,6 +44,11 @@ import { TermsComponent } from './components/terms/terms.component';
     FixedNavComponent,
     FaqComponent,
     TermsComponent,
+    SliderComponent,
+    DatabundleComponent,
+    MidnavComponent,
+    TvComponent
+
   ],
   imports: [
     BrowserModule,

@@ -12,7 +12,13 @@ import { ContactComponent } from './components/contact/contact.component';
 import { AboutComponent } from './components/about/about.component';
 import { FaqComponent } from './components/faq/faq.component';
 import { TermsComponent } from './components/terms/terms.component';
-
+import {ForgotPasswordComponent} from './components/forgot-password/forgot-password.component';
+import {MerchantLoginComponent} from './components/merchant-login/merchant-login.component';
+import {AdminLoginComponent} from './admin-dashboard/admin-login/admin-login.component';
+import {SliderComponent} from './components/slider/slider.component';
+import {DatabundleComponent} from './components/databundle/databundle.component';
+import {MidnavComponent} from './components/midnav/midnav.component';
+import {TvComponent} from './components/tv/tv.component';
 
 
 const routes: Routes = [
@@ -28,6 +34,13 @@ const routes: Routes = [
   {path:'faq', component: FaqComponent},
   {path:'policy', component: TermsComponent},
   {path:'about', component: AboutComponent},
+  {path:'forgot-password', component: ForgotPasswordComponent},
+  {path:'merchant-login', component: MerchantLoginComponent},
+  {path:'admin-login', component: AdminLoginComponent},
+  {path:'slider', component: SliderComponent},
+  {path:'databundle', component: DatabundleComponent},
+  {path:'midnav', component: MidnavComponent},
+  {path:'tv', component: TvComponent},
 
   {
     path: 'user',
@@ -36,6 +49,10 @@ const routes: Routes = [
   {
     path: 'merchant',
     loadChildren: () => import('./merchant-dashboard/merchant-dashboard.module').then(m => m.MerchantDashboardModule)
+  },
+  {
+    path: 'admin',
+    loadChildren: () => import('./admin-dashboard/admin-dashboard.module').then(m => m.AdminDashboardModule)
   },
   {
     path: '',

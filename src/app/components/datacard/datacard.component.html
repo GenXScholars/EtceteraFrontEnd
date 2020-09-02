@@ -3,53 +3,70 @@
    <app-fixed-nav></app-fixed-nav>
 
    <!-- fixed nav ends her -->
+
+   <!-- Slider -->
+<app-slider class="carousel slide"></app-slider>
+<!-- Slider Ends -->
+   <app-midnav></app-midnav>
+
+
   <!-- Main form start -->
-  <section class="main-form">
+  <section class="main-form navCntent">
     <div class="container">
 
 
-        <div class="row">
-            <div class="col-md-12 form-area pt-5">
-                <h2 class="text-4 mb-3">DataCard Recharge or Bill Payment</h2>
-                <form id="form-area" method="post">
-                    <div class="mb-3">
-                        <div class="custom-control custom-radio custom-control-inline">
-                            <input id="prepaid" name="rechargProbillpayment" class="custom-control-input" checked="" required="" type="radio">
-                            <label class="custom-control-label" for="prepaid">Prepaid</label>
-                        </div>
-                        <div class="custom-control custom-radio custom-control-inline">
-                            <input id="postpaid" name="rechargProbillpayment" class="custom-control-input" required="" type="radio">
-                            <label class="custom-control-label" for="postpaid">Postpaid</label>
-                        </div>
-                        <a href="#" data-target="#view-plans" data-toggle="modal" class="view-plans">View Plans</a>
+      <div class="row">
+        <div class="col-md-12 form-area " style="margin-top: 12px;">
+            <h2 class="text-4 mb-3">Mobile Recharge</h2>
+            <form id="form-area" method="post">
+                <div class="mb-3">
+
+
+
+                </div>
+
+                <div class="form-row">
+                    <div class="col-md-6 col-lg-3 form-group">
+                        <input type="text" class="form-control" data-bv-field="number" id="mobileNumber" required="" placeholder="Enter Mobile Number">
+                    </div>
+                    <div class="col-md-6 col-lg-3 form-group">
+                        <select class="custom-select" id="operator" required="">
+                            <option value="">Select Your Operator</option>
+                            <option>MTN</option>
+                            <option>GLO</option>
+                            <option>Airtel</option>
+                            <option>9Mobile</option>
+                        </select>
                     </div>
 
-                    <div class="form-row">
-                        <div class="col-md-6 col-lg-3 form-group">
-                            <input type="text" class="form-control" data-bv-field="number" id="mobileNumber" required="" placeholder="Enter Datacard Number">
-                        </div>
-                        <div class="col-md-6 col-lg-3 form-group">
-                            <select class="custom-select" id="operator" required="">
-                                <option value="">Select Your Operator</option>
-                                <option>Idea Netsetter</option>
-                                <option>Tata Photon</option>
-                            </select>
-                        </div>
-
-                        <div class="col-md-6 col-lg-3">
-                            <div class="form-group input-group">
-                                <div class="input-group-prepend"> <span class="input-group-text">$</span> </div>
-                                <input class="form-control" id="amount" placeholder="Enter Amount" required="" type="text">
-                            </div>
-                        </div>
-
-                        <div class="col-md-6 col-lg-3 form-group">
-                            <a class="btn btn-default btn-block rounded-0" href="recharge-summary.html">Continue</a>
+                    <div class="col-md-6 col-lg-3 form-group">
+                      <select class="custom-select" id="operator" required="">
+                          <option value="">Select Amount</option>
+                          <option>100</option>
+                          <option>200</option>
+                          <option>300</option>
+                          <option>400</option>
+                          <option>500</option>
+                          <option>1000</option>
+                          <option>2000</option>
+                          <option>3000</option>
+                          <option>4000</option>
+                      </select>
+                  </div>
+                    <div class="col-md-6 col-lg-2">
+                        <div class="form-group input-group">
+                            <div class="input-group-prepend"> <span class="input-group-text">$</span> </div>
+                            <input class="form-control" id="amount" placeholder="Enter Amount" required="" type="text">
                         </div>
                     </div>
-                </form>
-            </div>
+
+                    <div class="col-md-6 col-lg-2 form-group">
+                        <a class="btn btn-default btn-block rounded-0" href="recharge-summary.html">Continue</a>
+                    </div>
+                </div>
+            </form>
         </div>
+    </div>
     </div>
 </section>
 <!-- Main form end -->
