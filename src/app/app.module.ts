@@ -24,6 +24,7 @@ import {SliderComponent} from './components/slider/slider.component';
 import {DatabundleComponent} from './components/databundle/databundle.component';
 import {MidnavComponent} from './components/midnav/midnav.component';
 import {TvComponent} from './components/tv/tv.component';
+import { NotFoundPageComponent } from './components/not-found-page/not-found-page.component';
 
 
 @NgModule({
@@ -47,8 +48,8 @@ import {TvComponent} from './components/tv/tv.component';
     SliderComponent,
     DatabundleComponent,
     MidnavComponent,
-    TvComponent
-
+    TvComponent,
+    NotFoundPageComponent,
   ],
   imports: [
     BrowserModule,
