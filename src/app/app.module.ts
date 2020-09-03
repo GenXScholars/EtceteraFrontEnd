@@ -20,8 +20,11 @@ import { UserDashboardModule } from './user-dashboard/user-dashboard.module';
 import { FixedNavComponent } from './components/fixed-nav/fixed-nav.component';
 import { FaqComponent } from './components/faq/faq.component';
 import { TermsComponent } from './components/terms/terms.component';
+import {SliderComponent} from './components/slider/slider.component';
+import {DatabundleComponent} from './components/databundle/databundle.component';
+import {MidnavComponent} from './components/midnav/midnav.component';
+import {TvComponent} from './components/tv/tv.component';
 import { NotFoundPageComponent } from './components/not-found-page/not-found-page.component';
-
 
 
 @NgModule({
@@ -42,6 +45,10 @@ import { NotFoundPageComponent } from './components/not-found-page/not-found-pag
     FixedNavComponent,
     FaqComponent,
     TermsComponent,
+    SliderComponent,
+    DatabundleComponent,
+    MidnavComponent,
+    TvComponent,
     NotFoundPageComponent,
   ],
   imports: [
