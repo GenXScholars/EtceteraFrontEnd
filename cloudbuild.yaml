@@ -10,7 +10,6 @@ steps:
     entrypoint: npm
     args: [ 'run', 'build', '--prod' ]
 
-  # Deploy to google cloud app egnine
-  - name: node:10.15.1
-    entrypoint: npm
+   # Deploy to google cloud app egnine
+  - name: 'gcr.io/cloud-builders/gcloud'
     args: ['app', 'deploy', '--version=prod']
