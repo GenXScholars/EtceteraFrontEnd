@@ -1,5 +1,7 @@
 import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
+import { Routes, RouterModule, PreloadAllModules } from '@angular/router';
+
+
 import { HomeComponent } from './components/home/home.component';
 import { DatacardComponent } from './components/datacard/datacard.component';
 import { ElectricityComponent } from './components/electricity/electricity.component';
@@ -15,7 +17,6 @@ import { TermsComponent } from './components/terms/terms.component';
 import {ForgotPasswordComponent} from './components/forgot-password/forgot-password.component';
 import {MerchantLoginComponent} from './components/merchant-login/merchant-login.component';
 import {AdminLoginComponent} from './admin-dashboard/admin-login/admin-login.component';
-import {SliderComponent} from './components/slider/slider.component';
 import {DatabundleComponent} from './components/databundle/databundle.component';
 import {MidnavComponent} from './components/midnav/midnav.component';
 import {TvComponent} from './components/tv/tv.component';
@@ -38,11 +39,9 @@ const routes: Routes = [
   {path:'forgot-password', component: ForgotPasswordComponent},
   {path:'merchant-login', component: MerchantLoginComponent},
   {path:'admin-login', component: AdminLoginComponent},
-  {path:'slider', component: SliderComponent},
   {path:'databundle', component: DatabundleComponent},
   {path:'midnav', component: MidnavComponent},
   {path:'tv', component: TvComponent},
-
   {
     path: 'user',
     loadChildren: () => import('./user-dashboard/user-dashboard.module').then(m => m.UserDashboardModule)
@@ -59,12 +58,15 @@ const routes: Routes = [
     path: '',
     redirectTo: '',
     pathMatch: 'full'
-  },
-  { path: '**', component: NotFoundPageComponent },
+  }
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [
+    RouterModule.forRoot(routes,  {
+      preloadingStrategy: PreloadAllModules
+    })
+  ],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
