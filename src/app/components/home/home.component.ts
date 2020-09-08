@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { SliderComponent } from '../slider/slider.component';
 
 @Component({
   selector: 'app-home',

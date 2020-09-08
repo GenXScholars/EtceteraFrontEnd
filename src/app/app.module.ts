@@ -17,7 +17,6 @@ import { ContactComponent } from './components/contact/contact.component';
 import { AboutComponent } from './components/about/about.component';
 import { MerchantDashboardModule } from './merchant-dashboard/merchant-dashboard.module';
 import { UserDashboardModule } from './user-dashboard/user-dashboard.module';
-import { FixedNavComponent } from './components/fixed-nav/fixed-nav.component';
 import { FaqComponent } from './components/faq/faq.component';
 import { TermsComponent } from './components/terms/terms.component';
 import {SliderComponent} from './components/slider/slider.component';
@@ -42,7 +41,6 @@ import { NotFoundPageComponent } from './components/not-found-page/not-found-pag
     GotvComponent,
     ContactComponent,
     AboutComponent,
-    FixedNavComponent,
     FaqComponent,
     TermsComponent,
     SliderComponent,
