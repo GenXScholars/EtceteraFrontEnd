@@ -1,3 +1,13 @@
 .navCntent{
-  margin-top: 0px;
+  margin-top: 40px;
+}
+
+.navalign{
+
+}
+
+@media screen and (max-width: 1100px) {
+  .navalign{
+    margin-left: -10px;
+  }
 }

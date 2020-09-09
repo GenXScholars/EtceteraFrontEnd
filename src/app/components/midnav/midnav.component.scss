@@ -29,4 +29,29 @@
   text-align:center;
 
 }
+ .smalscreen{
+  width:80%;
+  margin:0 auto
 
+  }
+
+@media screen and (max-width: 440px) {
+  .main-form .bill-items{
+    max-width: calc(100% - 0px);
+  }
+
+  .smalscr{
+    padding-left: 0px;
+  }
+}
+@media screen and (max-width: 281px) {
+  .smalscreen{
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 233px) {
+  .smals{
+    padding-left: 5px;
+  }
+}
