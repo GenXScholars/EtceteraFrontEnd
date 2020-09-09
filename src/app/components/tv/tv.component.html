@@ -2,48 +2,43 @@
 <app-slider class="carousel slide"></app-slider>
 <!-- Slider Ends -->
 <app-midnav></app-midnav>
- <!-- Main form start -->
- <section class="main-formv navCntent">
+<!-- Main form start -->
+<section class="main-form navCntent">
   <div class="container">
 
 
-      <div class="row">
-          <div class="col-md-12 form-area pt-5">
+    <div class="row navalign">
+      <div class="col-md-12 form-area " style="margin-top: 12px;">
+          <h2 class="text-4 mb-3">Provide Smartcard Details</h2>
+          <form id="form-area" method="post">
+              <div class="">
 
-              <form id="form-area" method="post">
-                      <h2 class="text-4 mb-3">Data Subscription </h2>
-                      <div class="mb-3">
-                              <a href="#" data-target="#view-plans" data-toggle="modal" class="view-plans">View Plans</a>
+
+
+              </div>
+
+              <div class="form-row">
+                  <div class="col-md-6 col-lg-3 form-group">
+                      <input type="text" class="form-control" data-bv-field="number" id="mobileNumber" required="" placeholder="Provide Smartcard number">
+                  </div>
+                  <div class="col-md-6 col-lg-3 form-group">
+                      <select class="custom-select" id="operator" required="">
+                          <option value="">Select Your Operator</option>
+                          <option>DSTV</option>
+                          <option>GOTV</option>
+                          <option>STARTIMES</option>
+                      </select>
                   </div>
 
-                  <div class="form-row">
-                      <div class="col-md-6 col-lg-3 form-group">
-                          <input type="text" class="form-control" data-bv-field="number" id="mobileNumber" required="" placeholder="Enter Mobile Number">
-                      </div>
 
-                      <div class="col-md-3 col-lg-3 form-group">
-                          <select class="custom-select" id="operator" required="">
-                              <option value="">Select Your Operator</option>
-                              <option>MTN</option>
-                              <option>GLO</option>
-                              <option>AIRTEL</option>
-                              <option>9Mobile</option>
-                          </select>
-                      </div>
-                      <div class="col-md-2 col-lg-2">
-                          <div class="form-group input-group">
-                              <div class="input-group-prepend"> <span class="input-group-text">₦</span> </div>
-                              <input class="form-control" id="amount" placeholder="Enter Amount" required="" type="text">
-                          </div>
-                      </div>
 
-                      <div class="col-md-2 col-lg-2 form-group">
-                          <a class="btn btn-default btn-block rounded-0" href="recharge-summary.html">Continue</a>
-                      </div>
+                  <div class="col-md-6 col-lg-2 form-group">
+                      <a class="btn btn-default btn-block rounded-0" href="recharge-summary.html">Continue</a>
                   </div>
-              </form>
-          </div>
+              </div>
+          </form>
       </div>
+  </div>
   </div>
 </section>
 <!-- Main form end -->

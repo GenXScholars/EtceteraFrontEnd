@@ -15,12 +15,12 @@ import { AboutComponent } from './components/about/about.component';
 import { FaqComponent } from './components/faq/faq.component';
 import { TermsComponent } from './components/terms/terms.component';
 import {ForgotPasswordComponent} from './components/forgot-password/forgot-password.component';
-import {MerchantLoginComponent} from './components/merchant-login/merchant-login.component';
+import {MerchantLoginComponent} from './merchant-dashboard/merchant-login/merchant-login.component';
 import {AdminLoginComponent} from './admin-dashboard/admin-login/admin-login.component';
 import {DatabundleComponent} from './components/databundle/databundle.component';
 import {MidnavComponent} from './components/midnav/midnav.component';
 import {TvComponent} from './components/tv/tv.component';
-import { NotFoundPageComponent } from './components/not-found-page/not-found-page.component';
+import {MregisterComponent} from './merchant-dashboard/mregister/mregister.component';
 
 
 const routes: Routes = [
@@ -38,6 +38,7 @@ const routes: Routes = [
   {path:'about', component: AboutComponent},
   {path:'forgot-password', component: ForgotPasswordComponent},
   {path:'merchant-login', component: MerchantLoginComponent},
+  {path:'mregister', component: MregisterComponent},
   {path:'admin-login', component: AdminLoginComponent},
   {path:'databundle', component: DatabundleComponent},
   {path:'midnav', component: MidnavComponent},
@@ -58,7 +59,12 @@ const routes: Routes = [
     path: '',
     redirectTo: '',
     pathMatch: 'full'
+
+  },
+
+
   }
+
 ];
 
 @NgModule({
