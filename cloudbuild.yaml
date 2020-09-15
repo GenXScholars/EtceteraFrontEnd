@@ -1,0 +1,15 @@
+steps:
+
+  # Install node packages
+  - name: node:10.15.1
+    entrypoint: npm
+    args: [ 'install' ]
+
+  # Build production files
+  - name: node:10.15.1
+    entrypoint: npm
+    args: [ 'run', 'build', '--prod' ]
+
+   # Deploy to google cloud app egnine
+  - name: 'gcr.io/cloud-builders/gcloud'
+    args: ['app', 'deploy', '--version=prod']
