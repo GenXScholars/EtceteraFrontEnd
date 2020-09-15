@@ -1,11 +1,9 @@
-
 .navbar {
   width: 50%;
   height: auto;
   margin: 0 auto;
   background-color: white;
   z-index: 2000000;
-
 }
 
 /* Navbar links */
@@ -73,9 +71,10 @@
   text-decoration: none;
   font-size: 17px;
 }
-
+//Removed hover effect
+// background-color: #ddd;
 .topnav a:hover {
-  background-color: #ddd;
+
   color: black;
 }
 // .dropbtn:hover {
