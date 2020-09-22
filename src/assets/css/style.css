@@ -945,10 +945,10 @@ body {
   width: 25px;
   margin-right: 5px;
 }
-
+/*Removed max-width: calc(100% - 110px);*/
 .main-form .bill-items {
   position: relative;
-  max-width: calc(100% - 110px);
+
   text-align: center;
   justify-content: center;
   align-items: center;
