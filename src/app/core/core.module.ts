@@ -5,12 +5,8 @@ import { ApiEndpointsService } from './services/api-endpoints.service.service';
 
 
 
-
-
 @NgModule({
   declarations: [
-    ApiHttpService,
-    ApiEndpointsService
   ],
   imports: [
     CommonModule
