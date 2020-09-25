@@ -24,6 +24,7 @@ import {DatabundleComponent} from './components/databundle/databundle.component'
 import {MidnavComponent} from './components/midnav/midnav.component';
 import {TvComponent} from './components/tv/tv.component';
 import { NotFoundPageComponent } from './components/not-found-page/not-found-page.component';
+import { CoreModule } from './core/core.module';
 
 
 @NgModule({
@@ -53,7 +54,8 @@ import { NotFoundPageComponent } from './components/not-found-page/not-found-pag
     BrowserModule,
     AppRoutingModule,
     UserDashboardModule,
-    MerchantDashboardModule
+    MerchantDashboardModule,
+    CoreModule
   ],
   providers: [],
   bootstrap: [AppComponent]
