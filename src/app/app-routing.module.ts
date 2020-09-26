@@ -61,6 +61,11 @@ const routes: Routes = [
     pathMatch: 'full'
 
   },
+<<<<<<< HEAD
+
+
+=======
+>>>>>>> 2e29647c6e05b6fa0e38df609d5d80fcf6e7f146
 ];
 
 @NgModule({
