@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { NgxSpinnerModule } from "ngx-spinner";
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -25,6 +26,7 @@ import {MidnavComponent} from './components/midnav/midnav.component';
 import {TvComponent} from './components/tv/tv.component';
 import { NotFoundPageComponent } from './components/not-found-page/not-found-page.component';
 import { CoreModule } from './core/core.module';
+import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 
 
 @NgModule({
@@ -50,9 +52,11 @@ import { CoreModule } from './core/core.module';
     TvComponent,
     NotFoundPageComponent,
   ],
+   schemas: [CUSTOM_ELEMENTS_SCHEMA],
   imports: [
     BrowserModule,
     AppRoutingModule,
+    NgxSpinnerModule,
     UserDashboardModule,
     MerchantDashboardModule,
     CoreModule
