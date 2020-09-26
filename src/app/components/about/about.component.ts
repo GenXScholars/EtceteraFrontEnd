@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { NgxSpinnerService } from "ngx-spinner";
 
 @Component({
   selector: 'app-about',
@@ -6,10 +7,16 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./about.component.scss']
 })
 export class AboutComponent implements OnInit {
-
-  constructor() { }
+  title = 'VineBill-About';
+  constructor( private spinner: NgxSpinnerService) { }
 
   ngOnInit(): void {
+    this.spinner.show();
+
+    setTimeout(() => {
+      /** spinner ends after 5 seconds */
+      this.spinner.hide();
+    }, 500);
   }
 
 }

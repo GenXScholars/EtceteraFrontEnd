@@ -68,3 +68,10 @@
 }
 
 
+@media screen and (max-width: 500px) {
+  .count{
+   visibility: hidden;
+   display: none;
+  }
+}
+

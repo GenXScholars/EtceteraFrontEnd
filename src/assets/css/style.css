@@ -894,7 +894,6 @@ body {
   color: #fff;
   height: 100%;
   width: 100%;
-  padding: 15px 15px;
   outline: none;
   border: none;
 }
@@ -945,10 +944,10 @@ body {
   width: 25px;
   margin-right: 5px;
 }
-
+/*Removed max-width: calc(100% - 110px);*/
 .main-form .bill-items {
   position: relative;
-  max-width: calc(100% - 110px);
+
   text-align: center;
   justify-content: center;
   align-items: center;
@@ -956,7 +955,7 @@ body {
 }
 
 .main-form .bill-items li {
-  width: 90.9px;
+  width: 130px;
   height: 70px;
   display: -webkit-box;
   display: -ms-flexbox;

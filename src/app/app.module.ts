@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { NgxSpinnerModule } from "ngx-spinner";
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -24,6 +25,8 @@ import {DatabundleComponent} from './components/databundle/databundle.component'
 import {MidnavComponent} from './components/midnav/midnav.component';
 import {TvComponent} from './components/tv/tv.component';
 import { NotFoundPageComponent } from './components/not-found-page/not-found-page.component';
+import { CoreModule } from './core/core.module';
+import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 
 
 @NgModule({
@@ -49,11 +52,14 @@ import { NotFoundPageComponent } from './components/not-found-page/not-found-pag
     TvComponent,
     NotFoundPageComponent,
   ],
+   schemas: [CUSTOM_ELEMENTS_SCHEMA],
   imports: [
     BrowserModule,
     AppRoutingModule,
+    NgxSpinnerModule,
     UserDashboardModule,
-    MerchantDashboardModule
+    MerchantDashboardModule,
+    CoreModule
   ],
   providers: [],
   bootstrap: [AppComponent]
