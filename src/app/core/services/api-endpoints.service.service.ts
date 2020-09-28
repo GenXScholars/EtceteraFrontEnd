@@ -4,7 +4,9 @@ import { UrlBuilder } from '../../shared/classes/url-builder';
 import { QueryStringParameters } from '../../shared/classes/query-string-parameters';
 // import Constants
 import { Constants } from 'src/app/config/constants';
-@Injectable()
+@Injectable({
+  providedIn: 'root',
+})
 export class ApiEndpointsService {
   constructor(
     // Inject Constants
@@ -12,7 +14,7 @@ export class ApiEndpointsService {
   ) { }
   /* #region URL CREATOR */
   // URL
-  private createUrl(
+  public createUrl(
     action: string,
     isMockAPI: boolean = false
   ): string {
@@ -24,7 +26,7 @@ export class ApiEndpointsService {
     return urlBuilder.toString();
   }
   // URL WITH QUERY PARAMS
-  private createUrlWithQueryParameters(
+  public createUrlWithQueryParameters(
     action: string,
     queryStringHandler?:
       (queryStringParameters: QueryStringParameters) => void
@@ -41,7 +43,7 @@ export class ApiEndpointsService {
   }
 
   // URL WITH PATH VARIABLES
-  private createUrlWithPathVariables(
+  public createUrlWithPathVariables(
     action: string,
     pathVariables: any[] = []
   ): string {

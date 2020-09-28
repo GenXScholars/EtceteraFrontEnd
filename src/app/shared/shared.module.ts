@@ -1,11 +1,12 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { QueryStringParametersComponent } from './query-string-parameters/query-string-parameters.component';
+import { QueryStringParameters } from './classes/query-string-parameters';
+import { AlertsComponent } from './alerts/alerts/alerts.component';
 
 
 
 @NgModule({
-  declarations: [QueryStringParametersComponent],
+  declarations: [QueryStringParameters, AlertsComponent],
   imports: [
     CommonModule
   ]
