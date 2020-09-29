@@ -56,6 +56,14 @@ const routes: Routes = [
     loadChildren: () => import('./admin-dashboard/admin-dashboard.module').then(m => m.AdminDashboardModule)
   },
   {
+    path: 'payment',
+    loadChildren: () => import('./payment/payment.module').then(m => m.PaymentModule)
+  },
+  {
+    path: 'ebills',
+    loadChildren: () => import('./electricity-bills/electricity-bills.module').then(m => m.ElectricityBillsModule)
+  },
+  {
     path: '',
     redirectTo: '',
     pathMatch: 'full'
