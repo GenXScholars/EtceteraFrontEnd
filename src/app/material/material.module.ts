@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { MatSliderModule } from '@angular/material/slider';
 import { MatFormFieldModule } from '@angular/material/form-field';
@@ -27,6 +27,9 @@ import { MatDividerModule} from '@angular/material/divider';
     MatTabsModule,
     MatSliderModule,
     MatDividerModule,
+  ],
+  exports:[
+    MatFormFieldModule,
   ]
 })
 export class MaterialModule { }

@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { UserDashboardComponent } from './user-dashboard/user-dashboard.component';
 import { UserRoutingModule } from './user-dashboard/user-routing.module';
@@ -30,6 +30,7 @@ import { UserWalletRoutingModule } from './user-wallet/user-wallet-routing.modul
     TransactionDetailsRoutingModule,
     UserWalletRoutingModule
 
-  ]
+  ],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
 export class UserDashboardModule { }

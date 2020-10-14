@@ -1,1 +1,8 @@
-<p>guest-payment works!</p>
+<div class="example-container">
+  <mat-form-field class="gPayment" appearance="fill">
+    <mat-label>Enter your email</mat-label>
+    <input matInput placeholder="pat@example.com" formControlName="email" required>
+    <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>
+  </mat-form-field>
+</div>
+

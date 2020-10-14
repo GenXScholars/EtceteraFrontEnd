@@ -35,7 +35,6 @@ import { ElectricityBillsModule } from './electricity-bills/electricity-bills.mo
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from './material/material.module';
 
-
 @NgModule({
   declarations: [
     AppComponent,
@@ -70,8 +69,8 @@ import { MaterialModule } from './material/material.module';
     CoreModule,
     PaymentModule,
     ElectricityBillsModule,
-    MaterialModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    MaterialModule
   ],
   providers: [
     {
