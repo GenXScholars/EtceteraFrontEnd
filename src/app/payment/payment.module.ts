@@ -7,6 +7,7 @@ import { FundwByFirstBnkComponent } from './fundw-by-first-bnk/fundw-by-first-bn
 import { FundwByAcessbnkComponent } from './fundw-by-acessbnk/fundw-by-acessbnk.component';
 import { GuestPaymentComponent } from './guest-payment/guest-payment.component';
 import { PaymentsRoutingModule } from './payment-routing.module';
+import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 
 
 
@@ -15,6 +16,8 @@ import { PaymentsRoutingModule } from './payment-routing.module';
   imports: [
     CommonModule,
     PaymentsRoutingModule
-  ]
+  ],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA],
+
 })
 export class PaymentModule { }
