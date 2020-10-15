@@ -14,6 +14,7 @@ import { TransactionsRoutingModule } from './user-transactions/transaction-routi
 import { TransactionDetailsRoutingModule } from './user-transactions-details/transaction-details-routing.module';
 import { UserWalletComponent } from './user-wallet/user-wallet.component';
 import { UserWalletRoutingModule } from './user-wallet/user-wallet-routing.module';
+import { MaterialModule } from '../material/material.module';
 
 
 
@@ -28,7 +29,8 @@ import { UserWalletRoutingModule } from './user-wallet/user-wallet-routing.modul
     SettingsRoutingModule,
     TransactionsRoutingModule,
     TransactionDetailsRoutingModule,
-    UserWalletRoutingModule
+    UserWalletRoutingModule,
+    MaterialModule
 
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
