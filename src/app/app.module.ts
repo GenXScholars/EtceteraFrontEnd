@@ -17,8 +17,6 @@ import { TransferComponent } from './components/transfer/transfer.component';
 import { GotvComponent } from './components/gotv/gotv.component';
 import { ContactComponent } from './components/contact/contact.component';
 import { AboutComponent } from './components/about/about.component';
-import { MerchantDashboardModule } from './merchant-dashboard/merchant-dashboard.module';
-import { UserDashboardModule } from './user-dashboard/user-dashboard.module';
 import { FaqComponent } from './components/faq/faq.component';
 import { TermsComponent } from './components/terms/terms.component';
 import {SliderComponent} from './components/slider/slider.component';
@@ -27,13 +25,11 @@ import {MidnavComponent} from './components/midnav/midnav.component';
 import {TvComponent} from './components/tv/tv.component';
 import { NotFoundPageComponent } from './components/not-found-page/not-found-page.component';
 import { CoreModule } from './core/core.module';
-import { PaymentModule} from './payment/payment.module';
 import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { AuthInterceptor } from './_helpers/jwt.interceptor';
 import { ErrorInterceptor } from './_helpers/error.interceptor';
-import { ElectricityBillsModule } from './electricity-bills/electricity-bills.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MaterialModule } from './material/material.module';
+
 
 @NgModule({
   declarations: [
@@ -64,13 +60,8 @@ import { MaterialModule } from './material/material.module';
     AppRoutingModule,
     HttpClientModule,
     NgxSpinnerModule,
-    UserDashboardModule,
-    MerchantDashboardModule,
     CoreModule,
-    PaymentModule,
-    ElectricityBillsModule,
-    BrowserAnimationsModule,
-    MaterialModule
+    BrowserAnimationsModule
   ],
   providers: [
     {

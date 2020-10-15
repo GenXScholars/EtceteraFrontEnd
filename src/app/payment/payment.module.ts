@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FundwByCardComponent } from './fundw-by-card/fundw-by-card.component';
 import { FundwByProvidusComponent } from './fundw-by-providus/fundw-by-providus.component';
@@ -7,10 +7,8 @@ import { FundwByFirstBnkComponent } from './fundw-by-first-bnk/fundw-by-first-bn
 import { FundwByAcessbnkComponent } from './fundw-by-acessbnk/fundw-by-acessbnk.component';
 import { GuestPaymentComponent } from './guest-payment/guest-payment.component';
 import { PaymentsRoutingModule } from './payment-routing.module';
-import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { MatFormFieldModule } from '@angular/material/form-field';
-
+import { MaterialModule } from '../material/material.module';
 
 
 
@@ -20,8 +18,8 @@ import { MatFormFieldModule } from '@angular/material/form-field';
     CommonModule,
     FormsModule,
     ReactiveFormsModule,
-    MatFormFieldModule,
-    PaymentsRoutingModule
+    PaymentsRoutingModule,
+    MaterialModule
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
 

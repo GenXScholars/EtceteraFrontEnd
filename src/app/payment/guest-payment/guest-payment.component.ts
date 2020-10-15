@@ -13,7 +13,7 @@ export class GuestPaymentComponent implements OnInit {
 
   email: FormControl
   message: FormControl
-  contactForm : FormGroup
+  paymentForm : FormGroup
 
   constructor(private router:Router, private fb: FormBuilder){
 
@@ -23,7 +23,7 @@ export class GuestPaymentComponent implements OnInit {
   ngOnInit(){
     this.email = new FormControl('', [Validators.required, Validators.email]);
     this.message = new FormControl('', [Validators.required, Validators.email]);
-    this.contactForm = new FormGroup({
+    this.paymentForm = new FormGroup({
       email:this.email,
       message:this.message
     })

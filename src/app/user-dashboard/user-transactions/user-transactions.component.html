@@ -42,12 +42,12 @@
                   <div class="widget admin-widget p-0">
                       <div class="Profile-menu">
                         <ul class="nav secondary-nav">
-                          <li class="nav-item active"><a class="nav-link" routerLink = '/user'><i class="fas fa-tachometer-alt"></i> Dashboard</a></li>
-                          <li class="nav-item"><a class="nav-link" routerLink="/profile"><i class="fab fa-autoprefixer"></i> Account</a></li>
-                          <li class="nav-item"><a class="nav-link" routerLink="/wallet"><i class="fab fa-autoprefixer"></i> Wallet</a></li>
-                          <li class="nav-item"><a class="nav-link" routerLink = '/cards'><i class="fas fa-university"></i> Cards Accounts</a></li>
-                          <li class="nav-item"><a class="nav-link" routerLink = '/transactions'><i class="fas fa-list-ul"></i>Transactions</a></li>
-                          <li class="nav-item"><a class="nav-link" routerLink = '/settings'><i class="fas fa-cog"></i>Setting</a></li>
+                          <li class="nav-item active"><a class="nav-link" routerLink = "/user"><i class="fas fa-tachometer-alt"></i> Dashboard</a></li>
+                          <li class="nav-item"><a class="nav-link" routerLink="/user/profile"><i class="fab fa-autoprefixer"></i> Profile</a></li>
+                          <li class="nav-item"><a class="nav-link" routerLink="/user/wallet"><i class="fab fa-autoprefixer"></i> Wallet</a></li>
+                          <li class="nav-item"><a class="nav-link" routerLink = "/user/cards"><i class="fas fa-university"></i> Cards Accounts</a></li>
+                          <li class="nav-item"><a class="nav-link" routerLink = "/user/transactions"><i class="fas fa-list-ul"></i>Transactions</a></li>
+                          <li class="nav-item"><a class="nav-link" routerLink = "/user/settings"><i class="fas fa-cog"></i>Setting</a></li>
                       </ul>
                       </div>
                   </div>
@@ -77,33 +77,7 @@
               <!-- Filter -->
               <div class="row">
                   <!-- Category Filter  -->
-                  <div class="col-12 all-fillters-area main-form">
-                      <ul class="bill-items nav nav-tabs" id="teleporter">
-                          <li class="nav-item active" data-filter-value="01">Mobile</li>
-                          <li class="nav-item" data-filter-value="02">DTH</li>
-                          <li class="nav-item" data-filter-value="03">Datacard</li>
-                          <li class="nav-item" data-filter-value="04">Landline</li>
-                          <li class="nav-item" data-filter-value="05">Broadband</li>
-                          <li class="nav-item" data-filter-value="06">Electricity</li>
-                          <li class="nav-item" data-filter-value="07">Gas</li>
-                          <li class="nav-item" data-filter-value="08">Metro</li>
-                          <li class="nav-item" data-filter-value="09">Water</li>
-                          <li class="nav-item" data-filter-value="10">G Play</li>
-                          <li class="nav-item" data-filter-value="11">Cable</li>
-                          <li class="nav-item" data-filter-value="12">Muncipality</li>
-                          <li class="nav-item" data-filter-value="13">EMI</li>
-                          <li class="nav-item" data-filter-value="14">Challan</li>
-                          <li class="nav-item" data-filter-value="15">Housing</li>
-                      </ul>
-                      <ul class="morebtn">
-                          <li>
-                              <a href="#" class="nav-link mbtn"><i class="fas fa-ellipsis-v"></i></a>
-                              <ul class="dropdown-menu" id="receiver">
 
-                              </ul>
-                          </li>
-                      </ul>
-                  </div>
                   <!-- Category Filter End -->
                   <div class="col-12">
                       <form id="custom-filter-area" method="post">
@@ -152,7 +126,7 @@
 
                       <!-- Transaction List -->
                       <div class="transaction-area">
-                          <div class="items">
+                          <!-- <div class="items">
                               <a href="transactions-details.html">
                                   <div class="row">
                                       <div class="col pay-date">
@@ -172,262 +146,10 @@
                                       </div>
                                   </div>
                               </a>
-                          </div>
-                          <div class="items">
-                              <a href="transactions-details.html">
-                                  <div class="row">
-                                      <div class="col pay-date">
-                                          <span class="date">15</span>
-                                          <span class="pay-month">APR</span></div>
-                                      <div class="col">
-                                          <span class="name">Payment Received From Envato </span></div>
-                                      <div class="col text-center">
-                                          <span class="payments-status text-success" ><i data-toggle="tooltip" data-original-title="Completed" class="fas fa-check-circle"></i></span>
-                                      </div>
-                                      <div class="col">
-                                          <span class="payment-amaount">- $0.2</span>
-                                      </div>
-                                      <div class="col">
-                                          <span class="payment-amaount">+ $912</span>
-                                          <span class="currency">(USD)</span>
-                                      </div>
-                                  </div>
-                              </a>
-                          </div>
-                          <div class="items">
-                              <a href="transactions-details.html">
-                                  <div class="row">
-                                      <div class="col pay-date">
-                                          <span class="date">25</span>
-                                          <span class="pay-month">MAR</span></div>
-                                      <div class="col">
-                                          <span class="name">Payment Received From Upwork </span></div>
-                                      <div class="col text-center">
-                                          <span class="payments-status text-danger" ><i data-toggle="tooltip" data-original-title="Cancelled" class="fas fa-times-circle"></i></span>
-                                      </div>
-                                      <div class="col">
-                                          <span class="payment-amaount">- $0.2</span>
-                                      </div>
-                                      <div class="col">
-                                          <span class="payment-amaount">+ $1231</span>
-                                          <span class="currency">(USD)</span>
-                                      </div>
-                                  </div>
-                              </a>
-                          </div>
-                          <div class="items">
-                              <a href="transactions-details.html">
-                                  <div class="row">
-                                      <div class="col pay-date">
-                                          <span class="date">15</span>
-                                          <span class="pay-month">APR</span></div>
-                                      <div class="col">
-                                          <span class="name">Payment Received From Upwork </span></div>
-                                      <div class="col text-center">
-                                          <span class="payments-status text-warning" ><i data-toggle="tooltip" data-original-title="Completed" class="fas fa-exclamation-circle"></i></span>
-                                      </div>
-                                      <div class="col">
-                                          <span class="payment-amaount">- $0.2</span>
-                                      </div>
-                                      <div class="col">
-                                          <span class="payment-amaount">+ $562</span>
-                                          <span class="currency">(USD)</span>
-                                      </div>
-                                  </div>
-                              </a>
-                          </div>
-                          <div class="items">
-                              <a href="transactions-details.html">
-                                  <div class="row">
-                                      <div class="col pay-date">
-                                          <span class="date">15</span>
-                                          <span class="pay-month">APR</span></div>
-                                      <div class="col">
-                                          <span class="name">Fiverr Pty Ltd</span></div>
-                                      <div class="col text-center">
-                                          <span class="payments-status" ><i class="fas fa-ellipsis-h" data-toggle="tooltip" data-original-title="In Progress"></i></span>
-                                      </div>
-                                      <div class="col">
-                                          <span class="payment-amaount">- $0.2</span>
-                                      </div>
-                                      <div class="col">
-                                          <span class="payment-amaount">+ $234</span>
-                                          <span class="currency">(USD)</span>
-                                      </div>
-                                  </div>
-                              </a>
-                          </div>
-                          <div class="items">
-                              <a href="transactions-details.html">
-                                  <div class="row">
-                                      <div class="col pay-date">
-                                          <span class="date">15</span>
-                                          <span class="pay-month">APR</span></div>
-                                      <div class="col">
-                                          <span class="name">Withdraw to DBBL Bank </span></div>
-                                      <div class="col text-center">
-                                          <span class="payments-status" ><i class="fas fa-ellipsis-h" data-toggle="tooltip" data-original-title="In Progress"></i></span>
-                                      </div>
-                                      <div class="col">
-                                          <span class="payment-amaount">- $0.2</span>
-                                      </div>
-                                      <div class="col">
-                                          <span class="payment-amaount">- $2562</span>
-                                          <span class="currency">(USD)</span>
-                                      </div>
-                                  </div>
-                              </a>
-                          </div>
-                          <div class="items">
-                              <a href="transactions-details.html">
-                                  <div class="row">
-                                      <div class="col pay-date">
-                                          <span class="date">15</span>
-                                          <span class="pay-month">APR</span></div>
-                                      <div class="col">
-                                          <span class="name">Payment Received From Envato</span></div>
-                                      <div class="col text-center">
-                                          <span class="payments-status text-success" ><i data-toggle="tooltip" data-original-title="Completed" class="fas fa-check-circle"></i></span>
-                                      </div>
-                                      <div class="col">
-                                          <span class="payment-amaount">- $0.2</span>
-                                      </div>
-                                      <div class="col">
-                                          <span class="payment-amaount">+ $562</span>
-                                          <span class="currency">(USD)</span>
-                                      </div>
-                                  </div>
-                              </a>
-                          </div>
-                          <div class="items">
-                              <a href="transactions-details.html">
-                                  <div class="row">
-                                      <div class="col pay-date">
-                                          <span class="date">15</span>
-                                          <span class="pay-month">APR</span></div>
-                                      <div class="col">
-                                          <span class="name">Gas Bill Pay</span></div>
-                                      <div class="col text-center">
-                                          <span class="payments-status text-success" ><i data-toggle="tooltip" data-original-title="Completed" class="fas fa-check-circle"></i></span>
-                                      </div>
-                                      <div class="col">
-                                          <span class="payment-amaount">- $0.2</span>
-                                      </div>
-                                      <div class="col">
-                                          <span class="payment-amaount">- $562</span>
-                                          <span class="currency">(USD)</span>
-                                      </div>
-                                  </div>
-                              </a>
-                          </div>
-                          <div class="items">
-                              <a href="transactions-details.html">
-                                  <div class="row">
-                                      <div class="col pay-date">
-                                          <span class="date">15</span>
-                                          <span class="pay-month">APR</span></div>
-                                      <div class="col">
-                                          <span class="name">Water Bill Payment</span></div>
-                                      <div class="col text-center">
-                                          <span class="payments-status" ><i class="fas fa-ellipsis-h" data-toggle="tooltip" data-original-title="In Progress"></i></span>
-                                      </div>
-                                      <div class="col">
-                                          <span class="payment-amaount">- $0.2</span>
-                                      </div>
-                                      <div class="col">
-                                          <span class="payment-amaount">- $562</span>
-                                          <span class="currency">(USD)</span>
-                                      </div>
-                                  </div>
-                              </a>
-                          </div>
-                          <div class="items">
-                              <a href="transactions-details.html">
-                                  <div class="row">
-                                      <div class="col pay-date">
-                                          <span class="date">15</span>
-                                          <span class="pay-month">APR</span></div>
-                                      <div class="col">
-                                          <span class="name">landline Bill Pay</span></div>
-                                      <div class="col text-center">
-                                          <span class="payments-status text-danger" ><i data-toggle="tooltip" data-original-title="Cancelled" class="fas fa-times-circle"></i></span>
-                                      </div>
-                                      <div class="col">
-                                          <span class="payment-amaount">- $0.2</span>
-                                      </div>
-                                      <div class="col">
-                                          <span class="payment-amaount">- $562</span>
-                                          <span class="currency">(USD)</span>
-                                      </div>
-                                  </div>
-                              </a>
-                          </div>
-                          <div class="trancstion-more">
-                              <div class="items">
-                                      <a href="transactions-details.html">
-                                          <div class="row">
-                                              <div class="col pay-date">
-                                                  <span class="date">15</span>
-                                                  <span class="pay-month">APR</span></div>
-                                              <div class="col">
-                                                  <span class="name">Payment Received From Envato</span></div>
-                                              <div class="col text-center">
-                                                  <span class="payments-status text-success" ><i data-toggle="tooltip" data-original-title="Completed" class="fas fa-check-circle"></i></span>
-                                              </div>
-                                              <div class="col">
-                                                  <span class="payment-amaount">- $0.2</span>
-                                              </div>
-                                              <div class="col">
-                                                  <span class="payment-amaount">+ $562</span>
-                                                  <span class="currency">(USD)</span>
-                                              </div>
-                                          </div>
-                                      </a>
-                                  </div>
-                                  <div class="items">
-                                      <a href="transactions-details.html">
-                                          <div class="row">
-                                              <div class="col pay-date">
-                                                  <span class="date">15</span>
-                                                  <span class="pay-month">APR</span></div>
-                                              <div class="col">
-                                                  <span class="name">Gas Bill Pay</span></div>
-                                              <div class="col text-center">
-                                                  <span class="payments-status text-success" ><i data-toggle="tooltip" data-original-title="Completed" class="fas fa-check-circle"></i></span>
-                                              </div>
-                                              <div class="col">
-                                                  <span class="payment-amaount">- $0.2</span>
-                                              </div>
-                                              <div class="col">
-                                                  <span class="payment-amaount">- $562</span>
-                                                  <span class="currency">(USD)</span>
-                                              </div>
-                                          </div>
-                                      </a>
-                                  </div>
-                                  <div class="items">
-                                      <a href="transactions-details.html">
-                                          <div class="row">
-                                              <div class="col pay-date">
-                                                  <span class="date">15</span>
-                                                  <span class="pay-month">APR</span></div>
-                                              <div class="col">
-                                                  <span class="name">Water Bill Payment</span></div>
-                                              <div class="col text-center">
-                                                  <span class="payments-status" ><i class="fas fa-ellipsis-h" data-toggle="tooltip" data-original-title="In Progress"></i></span>
-                                              </div>
-                                              <div class="col">
-                                                  <span class="payment-amaount">- $0.2</span>
-                                              </div>
-                                              <div class="col">
-                                                  <span class="payment-amaount">- $562</span>
-                                                  <span class="currency">(USD)</span>
-                                              </div>
-                                          </div>
-                                      </a>
-                                  </div>
+                          </div> -->
 
-                          </div>
+
+
                       </div>
                       <!-- Transaction List End -->
 

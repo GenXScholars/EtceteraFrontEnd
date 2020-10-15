@@ -64,14 +64,13 @@
                       <ul class="nav secondary-nav">
 
                          <li class="nav-item active"><a class="nav-link" routerLink = '/user'><i class="fas fa-tachometer-alt"></i> Dashboard</a></li>
-                         <li class="nav-item"><a class="nav-link" routerLink="/profile"><i class="fab fa-autoprefixer"></i> Account</a></li>
-                         <li class="nav-item"><a class="nav-link" routerLink="/wallet"><i class="fab fa-autoprefixer"></i> Wallet</a></li>
-                         <li class="nav-item"><a class="nav-link" routerLink = '/cards'><i class="fas fa-university"></i> Cards Accounts</a></li>
-                         <li class="nav-item"><a class="nav-link" routerLink = '/transactions'><i class="fas fa-list-ul"></i>Transactions</a></li>
-                          <li class="nav-item"><a class="nav-link" href="deposit-money.html"><i class="fas fa-plus"></i> Deposit Money</a></li>
-                          <li class="nav-item"><a class="nav-link" href="send-money.html"><i class="far fa-paper-plane"></i> Send Money</a></li>
-                          <li class="nav-item"><a class="nav-link" href="request-money.html"><i class="fas fa-piggy-bank"></i> Request Money</a></li>
-                          <li class="nav-item"><a class="nav-link" href="withdraw-money.html"><i class="fas fa-wallet"></i> Withdarw Money</a></li>
+                         <li class="nav-item"><a class="nav-link" routerLink="/user/profile"><i class="fab fa-autoprefixer"></i> profile</a></li>
+                         <li class="nav-item"><a class="nav-link" routerLink="/user/wallet"><i class="fab fa-autoprefixer"></i> Wallet</a></li>
+                         <li class="nav-item"><a class="nav-link" routerLink = '/user/cards'><i class="fas fa-university"></i> Cards Accounts</a></li>
+                         <li class="nav-item"><a class="nav-link" routerLink = '/user/transactions'><i class="fas fa-list-ul"></i>Transactions</a></li>
+                          <li class="nav-item"><a class="nav-link" href="/user/fundWallet"><i class="fas fa-plus"></i> fund Wallet</a></li>
+                          <li class="nav-item"><a class="nav-link" href="/user/transerToBank"><i class="far fa-paper-plane"></i> Send Money</a></li>
+                          <li class="nav-item"><a class="nav-link" href="/user/withdraw"><i class="fas fa-wallet"></i> Withdarw Money</a></li>
 
                       </ul>
                   </div>
@@ -143,108 +142,11 @@
                       <div class="tab-pane fade show active" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
                           <form>
                               <div class="form-group">
-                                  <label>Enter the receiver mobile number</label>
+                                  <label>fund Your Wallet</label>
                                   <input type="text" class="form-control shadow form-control-lg mobilenumber" id="mobilenumber2" required placeholder="Enter Mobile Number">
                               </div>
 
-                              <div class="form-group">
-                                  <label for="exampleFormControlInput04">Search Operator</label>
-                                  <input type="email" class="form-control" id="exampleFormControlInput04" placeholder="Searching...">
-                              </div>
-
-                              <div class="operators">
-                                  <h3 class="title">Select Your Operator</h3>
-                                  <div class="row">
-                                      <div class="col-md-2 col-sm-4">
-                                          <div class="single-operator">
-                                              <div class="op-logo" data-operator="op1">
-                                                  <img src="/assets/images/bill/prepaid/1.png" alt="">
-                                              </div>
-                                          </div>
-                                      </div>
-                                      <div class="col-md-2 col-sm-4">
-                                          <div class="single-operator">
-                                              <div class="op-logo" data-operator="op1">
-                                                  <img src="/assets/images/bill/prepaid/2.png" alt="">
-                                              </div>
-                                          </div>
-                                      </div>
-                                      <div class="col-md-2 col-sm-4">
-                                          <div class="single-operator">
-                                              <div class="op-logo" data-operator="op1">
-                                                  <img src="/assets/images/bill/prepaid/3.png" alt="">
-                                              </div>
-                                          </div>
-                                      </div>
-                                      <div class="col-md-2 col-sm-4">
-                                          <div class="single-operator">
-                                              <div class="op-logo" data-operator="op1">
-                                                  <img src="/assets/images/bill/prepaid/4.png" alt="">
-                                              </div>
-                                          </div>
-                                      </div>
-                                      <div class="col-md-2 col-sm-4">
-                                          <div class="single-operator">
-                                              <div class="op-logo" data-operator="op1">
-                                                  <img src="/assets/images/bill/prepaid/5.png" alt="">
-                                              </div>
-                                          </div>
-                                      </div>
-                                      <div class="col-md-2 col-sm-4">
-                                          <div class="single-operator">
-                                              <div class="op-logo" data-operator="op1">
-                                                  <img src="/assets/images/bill/prepaid/6.png" alt="">
-                                              </div>
-                                          </div>
-                                      </div>
-                                  </div>
-                              </div>
-
-                              <div class="products">
-                                  <h3 class="title">Select Your Plan</h3>
-                                  <div class="row">
-                                      <div class="col">
-                                              <a href="#" data-target="#view-plans" data-toggle="modal" class="view-plans">Mobile Topup</a>
-                                      </div>
-                                      <div class="col">
-                                              <a href="#" data-target="#view-plans" data-toggle="modal" class="view-plans">Mobile Plan</a>
-                                      </div>
-
-                                  </div>
-                              </div>
-                              <div class="products">
-                                  <h3 class="title">Select Pakage</h3>
-                                  <div class="row">
-                                      <div class="col">
-                                          <a href="#" class="pakbtn" data-pakage="">
-                                              <b>$02 USD</b>
-                                              <span>150 INR</span>
-                                          </a>
-                                      </div>
-                                      <div class="col">
-                                          <a href="#" class="pakbtn" data-pakage="">
-                                              <b>$05 USD</b>
-                                              <span>150 INR</span>
-                                          </a>
-                                      </div>
-                                      <div class="col">
-                                          <a href="#" class="pakbtn" data-pakage="">
-                                              <b>$10 USD</b>
-                                              <span>150 INR</span>
-                                          </a>
-                                      </div>
-                                      <div class="col">
-                                          <a href="#" class="pakbtn" data-pakage="">
-                                              <b>$15 USD</b>
-                                              <span>150 INR</span>
-                                          </a>
-                                      </div>
-                                  </div>
-                              </div>
-                              <ul class="pager my-5">
-                                  <li><a href="#" class="btn btn-default "><i class="fas fa-chevron-left"></i> Previous</a></li>
-                                  <li><a href="#" class="btn btn-default "> Next <i class="fas fa-chevron-right"></i></a></li>
-                              </ul>
+                            <!-- forms to be ade here -->
                           </form>
                       </div>
                       <div class="tab-pane fade" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab">
