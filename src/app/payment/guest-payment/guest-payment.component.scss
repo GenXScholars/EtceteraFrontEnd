@@ -1,0 +1,48 @@
+body{
+  margin: 0;
+  height: auto;
+
+}
+.example-container .mat-form-field + .mat-form-field {
+  margin-left: 8px;
+}
+
+.example-container {
+  background-color: white;
+  border-radius: 2rem;
+  width:50%;
+  height:auto;
+  border-top: 2px solid black;
+  padding:0.8rem;
+  margin:0 auto;
+  margin-top:6rem;
+  margin-bottom: 6rem;
+  align-items: center;
+  justify-content: center;
+  border-bottom: 4px solid blue;
+}
+
+.hcontact{
+  text-align: center;
+}
+.zinput{
+  width:100%;
+}
+.btn-submit{
+  border:none;
+  width:100%;
+  font-size: xx-large;
+  font-weight: 900;
+  height: auto;
+  text-align: center;
+  background: #4c5e7a;
+  color:white;
+  border-radius: 2rem;
+  outline:none;
+}
+.btn-submit:hover{
+  cursor: pointer;
+  box-shadow: 2px 2px 2px black;
+  border: none;
+  outline:none;
+}

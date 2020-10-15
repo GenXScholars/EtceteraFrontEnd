@@ -1,5 +1,6 @@
 import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
-import { FormControl, Validators } from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-guest-payment',
@@ -9,10 +10,24 @@ import { FormControl, Validators } from '@angular/forms';
 })
 export class GuestPaymentComponent implements OnInit {
 
-  constructor() { }
 
-  email = new FormControl('', [Validators.required, Validators.email]);
+  email: FormControl
+  message: FormControl
+  contactForm : FormGroup
 
+  constructor(private router:Router, private fb: FormBuilder){
+
+  }
+
+
+  ngOnInit(){
+    this.email = new FormControl('', [Validators.required, Validators.email]);
+    this.message = new FormControl('', [Validators.required, Validators.email]);
+    this.contactForm = new FormGroup({
+      email:this.email,
+      message:this.message
+    })
+  }
   getErrorMessage() {
     if (this.email.hasError('required')) {
       return 'You must enter a value';
@@ -21,7 +36,12 @@ export class GuestPaymentComponent implements OnInit {
     return this.email.hasError('email') ? 'Not a valid email' : '';
   }
 
-  ngOnInit(): void {
+  makePayment(contactForm){
+    // make payment login goes here
+    if(contactForm.invalid){
+      window.alert("please ill in the necessary ields")
+    }
+    window.alert("thank you or shopping with us")
   }
 
 }

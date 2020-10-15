@@ -1,8 +1,30 @@
-<div class="example-container">
+<!-- <div class="example-container">
   <mat-form-field class="gPayment" appearance="fill">
     <mat-label>Enter your email</mat-label>
     <input matInput placeholder="pat@example.com" formControlName="email" required>
     <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>
   </mat-form-field>
+</div>
+ -->
+ <div class="example-container">
+  <h1 class="hcontact">Send Me A Message</h1>
+  <form  formGroup ="contactForm" (ngSubmit) = makePayment(contactForm)  >
+    <mat-form-field class="zinput" appearance="fill">
+      <mat-label>Your Email</mat-label>
+      <input matInput placeholder="pat@example.com" formControlName="email" required>
+      <mat-error *ngIf="contactForm.controls.email.invalid">{{getErrorMessage()}}</mat-error>
+    </mat-form-field>
+    <br>
+    <mat-form-field class="zinput" appearance="fill">
+      <mat-label>Brief Message</mat-label>
+      <textarea matInput formControlName="message" required></textarea>
+
+    </mat-form-field>
+    <button type="submit" class="btn-submit">Send</button>
+  </form>
+
+
+
+
 </div>
 

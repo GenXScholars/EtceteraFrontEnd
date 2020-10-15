@@ -28,8 +28,6 @@ import { MatDividerModule} from '@angular/material/divider';
     MatSliderModule,
     MatDividerModule,
   ],
-  exports:[
-    MatFormFieldModule,
-  ]
+  schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class MaterialModule { }

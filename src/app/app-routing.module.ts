@@ -21,6 +21,7 @@ import {DatabundleComponent} from './components/databundle/databundle.component'
 import {MidnavComponent} from './components/midnav/midnav.component';
 import {TvComponent} from './components/tv/tv.component';
 import {MregisterComponent} from './merchant-dashboard/mregister/mregister.component';
+import { NotFoundPageComponent } from './components/not-found-page/not-found-page.component';
 
 
 const routes: Routes = [
@@ -69,6 +70,9 @@ const routes: Routes = [
     pathMatch: 'full'
 
   },
+  {
+    path: '**', component: NotFoundPageComponent
+  },
 
 
 ];
@@ -79,4 +83,4 @@ const routes: Routes = [
   ],
   exports: [RouterModule]
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {  }

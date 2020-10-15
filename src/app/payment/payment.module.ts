@@ -8,6 +8,9 @@ import { FundwByAcessbnkComponent } from './fundw-by-acessbnk/fundw-by-acessbnk.
 import { GuestPaymentComponent } from './guest-payment/guest-payment.component';
 import { PaymentsRoutingModule } from './payment-routing.module';
 import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { MatFormFieldModule } from '@angular/material/form-field';
+
 
 
 
@@ -15,6 +18,9 @@ import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
   declarations: [FundwByCardComponent, FundwByProvidusComponent, FundwByGtBnkComponent, FundwByFirstBnkComponent, FundwByAcessbnkComponent, GuestPaymentComponent],
   imports: [
     CommonModule,
+    FormsModule,
+    ReactiveFormsModule,
+    MatFormFieldModule,
     PaymentsRoutingModule
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
