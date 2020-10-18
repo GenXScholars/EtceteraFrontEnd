@@ -10,19 +10,19 @@ export class CreditCardsServicesService {
   constructor( private apiEndpoint : ApiEndpointsService ) { }
 
   public createCreditCard(){
-    this.apiEndpoint.createUrl("creditCards/create", true)
+    return this.apiEndpoint.createUrl("creditCards/create", true)
   }
 
   public getAllCards(){
-    this.apiEndpoint.createUrl("creditCards/get-all", true)
+    return this.apiEndpoint.createUrl("creditCards/get-all", true)
   }
 
   public deleteACard( cardHolderName: String ){
-    this.apiEndpoint.createUrlWithPathVariables("creditCards", [cardHolderName])
+    return this.apiEndpoint.createUrlWithPathVariables("creditCards", [cardHolderName])
   }
 
   public getASingleCard( cardNumber : String){
-    this.apiEndpoint.createUrlWithPathVariables("creditCards", [cardNumber])
+    return this.apiEndpoint.createUrlWithPathVariables("creditCards", [cardNumber])
   }
 
   public upDateACard(

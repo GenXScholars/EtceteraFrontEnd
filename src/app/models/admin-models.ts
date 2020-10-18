@@ -1,4 +1,4 @@
-export interface AdminModels {
+export class Admin {
   id: number;
   username: string;
   email: string;
@@ -6,5 +6,5 @@ export interface AdminModels {
   lastname: string;
   password: string;
   token: string;
-  role: string
+  role: string;
 }

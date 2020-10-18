@@ -28,11 +28,13 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.scss"
+              "src/styles.scss",
+              "./node_modules/toastr/build/toastr.min.css"
 
             ],
             "scripts": [
-              "./node_modules/jquery/dist/jquery.min.js"
+              "./node_modules/jquery/dist/jquery.min.js",
+              "./node_modules/toastr/build/toastr.min.js"
 
 
             ]
@@ -71,7 +73,8 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "epaymentFrontEnd:build"
+            "browserTarget": "epaymentFrontEnd:build",
+            "proxyConfig": "./proxy.conf.json"
           },
           "configurations": {
             "production": {

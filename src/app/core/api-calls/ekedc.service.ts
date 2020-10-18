@@ -9,22 +9,22 @@ export class EKEDCService {
   constructor( private apiEndpoint : ApiEndpointsService ) { }
 
   public getAccountDetails(){
-    this.apiEndpoint.createUrl("ekdc/getAcctDetails", true)
+    return this.apiEndpoint.createUrl("ekdc/getAcctDetails", true)
   }
 
   public getDealerBalance(){
-    this.apiEndpoint.createUrl("ekdc/getOurBalance", true)
+    return this.apiEndpoint.createUrl("ekdc/getOurBalance", true)
   }
 
   public getUserTransactions(){
-    this.apiEndpoint.createUrl("ekdc/getAllTransaction", true)
+    return this.apiEndpoint.createUrl("ekdc/getAllTransaction", true)
   }
 
   public getATransaction(){
-    this.apiEndpoint.createUrl("ekedc/getSingleTransaction", true)
+    return this.apiEndpoint.createUrl("ekedc/getSingleTransaction", true)
   }
 
   public rechargeMeter(){
-    this.apiEndpoint.createUrl("ekdc/rechargeMeter", true)
+    return this.apiEndpoint.createUrl("ekdc/rechargeMeter", true)
   }
 }

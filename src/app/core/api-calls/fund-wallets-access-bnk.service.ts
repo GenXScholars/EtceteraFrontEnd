@@ -9,14 +9,14 @@ export class FundWalletsAccessBnkService {
   constructor( private apiEndpoint : ApiEndpointsService ) { }
 
   public initiatePayment(){
-    this.apiEndpoint.createUrl("accessbnk/initiate", true)
+    return this.apiEndpoint.createUrl("accessbnk/initiate", true)
   }
 
   public validatePayment(){
-    this.apiEndpoint.createUrl("accessbnk/validate", true)
+    return this.apiEndpoint.createUrl("accessbnk/validate", true)
   }
 
   public verifyPayment(){
-    this.apiEndpoint.createUrl("accessbnk/verify", true)
+    return this.apiEndpoint.createUrl("accessbnk/verify", true)
   }
 }

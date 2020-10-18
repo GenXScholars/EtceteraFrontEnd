@@ -10,23 +10,23 @@ export class AdminService {
   constructor( private apiEndpoint : ApiEndpointsService ) { }
 
   public signUpAdmin(){
-    this.apiEndpoint.createUrl("admin/sign-up", true)
+    return this.apiEndpoint.createUrl("admin/sign-up", true)
   }
 
   public loginAdmin(){
-    this.apiEndpoint.createUrl("admin/login", true)
+    return this.apiEndpoint.createUrl("admin/login", true)
   }
 
   public getAllAdmins(){
-    this.apiEndpoint.createUrl("admin/get-all", true)
+    return this.apiEndpoint.createUrl("admin/get-all", true)
   }
 
   public deleteAnAdmin( id: String ){
-    this.apiEndpoint.createUrlWithPathVariables("admin", [id])
+    return this.apiEndpoint.createUrlWithPathVariables("admin", [id])
   }
 
   public getASingleAdmin( id : String){
-    this.apiEndpoint.createUrlWithPathVariables("admin", [id])
+    return this.apiEndpoint.createUrlWithPathVariables("admin", [id])
   }
   public upDateAnAdmin(
     id : string
