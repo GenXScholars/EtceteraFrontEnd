@@ -3,10 +3,6 @@ import { Action } from '@ngrx/store';
 import { Router } from '@angular/router';
 import { Actions, createEffect, Effect, ofType } from '@ngrx/effects';
 // import { Observable } from 'rxjs/Observable';
-import 'rxjs/add/observable/of';
-import 'rxjs/add/operator/map';
-import 'rxjs/add/operator/switchMap';
-import 'rxjs/add/operator/catch';
 import { catchError, exhaustMap, map, tap } from 'rxjs/operators';
 
 import { AdminService } from '../../core/api-calls/admin.service';
