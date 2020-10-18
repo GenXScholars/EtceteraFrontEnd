@@ -9,9 +9,9 @@ export class GuestPaymentServicesService {
   constructor( private apiEndpoint : ApiEndpointsService ) { }
 
   public guestPayment(){
-    this.apiEndpoint.createUrl("guest/pay", true)
+    return this.apiEndpoint.createUrl("guest/pay", true)
   }
   public verifyPayment(){
-    this.apiEndpoint.createUrl("guest/verifyPayment", true)
+    return this.apiEndpoint.createUrl("guest/verifyPayment", true)
   }
 }

@@ -29,6 +29,10 @@ import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { AuthInterceptor } from './_helpers/jwt.interceptor';
 import { ErrorInterceptor } from './_helpers/error.interceptor';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { StoreModule } from '@ngrx/store';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { EffectsModule } from '@ngrx/effects';
+import { UserEffects } from './app-store/effects/user.effects';
 
 
 @NgModule({
@@ -57,11 +61,18 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
    schemas: [CUSTOM_ELEMENTS_SCHEMA],
   imports: [
     BrowserModule,
+    FormsModule,
+    ReactiveFormsModule,
     AppRoutingModule,
     HttpClientModule,
     NgxSpinnerModule,
     CoreModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+
+    StoreModule.forRoot({}, {}),
+    EffectsModule.forRoot([
+      UserEffects]),
+
   ],
   providers: [
     {

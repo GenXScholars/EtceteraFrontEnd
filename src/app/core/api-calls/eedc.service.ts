@@ -9,18 +9,18 @@ export class EEDCService {
   constructor( private apiEndpoint : ApiEndpointsService ) { }
 
   public getAccountDetails(){
-    this.apiEndpoint.createUrl("eedc/getAcctDetails", true)
+    return this.apiEndpoint.createUrl("eedc/getAcctDetails", true)
   }
 
   public getDealerBalance(){
-    this.apiEndpoint.createUrl("eedc/getOurBalance", true)
+    return this.apiEndpoint.createUrl("eedc/getOurBalance", true)
   }
 
   public getATransaction(){
-    this.apiEndpoint.createUrl("eedc/getATransaction", true)
+    return this.apiEndpoint.createUrl("eedc/getATransaction", true)
   }
 
   public rechargeMeter(){
-    this.apiEndpoint.createUrl("eedc/rechargeMeter", true)
+    return this.apiEndpoint.createUrl("eedc/rechargeMeter", true)
   }
 }

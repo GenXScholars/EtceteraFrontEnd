@@ -1,4 +1,12 @@
 import { Component, OnInit } from '@angular/core';
+import { FormControl, FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
+import { NgxSpinnerService } from 'ngx-spinner';
+import { first } from 'rxjs/operators';
+import { UserService } from 'src/app/core/api-calls/user.service';
+import { ApiHttpService } from 'src/app/core/services/api-http.service.service';
+import { User } from 'src/app/models/user-models';
+import { ToastrService } from 'src/app/shared/services/toastr.service';
 
 @Component({
   selector: 'app-merchant-login',
@@ -7,9 +15,62 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MerchantLoginComponent implements OnInit {
 
-  constructor() { }
+  user: User = new User();
+  email: FormControl;
+  password: FormControl;
+  ConfirmPassword: FormControl;
+  loginForm : FormGroup;
+  constructor( private router:Router, private toastr: ToastrService, private fb: FormBuilder, private spinner: NgxSpinnerService, private userservice: UserService, private apiServices: ApiHttpService ) { }
 
-  ngOnInit() {
+  ngOnInit(): void {
+    this.spinner.show();
+
+    setTimeout(() => {
+      /** spinner ends after 5 seconds */
+      this.spinner.hide();
+    }, 500);
+
+
+
+    this.email = new FormControl('', [Validators.required, Validators.email]);
+    this.password = new FormControl('', [Validators.required, Validators.email]);
+    this.ConfirmPassword = new FormControl('', [Validators.required, Validators.email]);
+    this.loginForm = new FormGroup({
+      email:this.email,
+      password:this.password,
+      ConfirmPassword:this.ConfirmPassword
+    })
   }
+  getErrorMessage() {
+    if (this.email.hasError('required')) {
+      return 'You must enter a value';
+    }
+
+    return this.email.hasError('email') ? 'Not a valid email' : '';
+  }
+
+  getPasswordErrorMessage(){
+    if(this.ConfirmPassword.hasError('required')) {
+      return 'you must confirm your password';
+    }
+
+    return 'passwords do not match';
+  }
+
+  onSubmit(){
+      console.log(this.user);
+      this.toastr.info("Welcome back" + " " + this.user.email);
+      this.apiServices.post(this.userservice.loginUser(), this.loginForm.value)
+      .pipe(first ()).subscribe(response =>{
+        console.log(response);
+      })
+
+
+        // if(!data){
+        //   this.router.navigate(['/login']);
+        // }
+
+
+    }
 
 }

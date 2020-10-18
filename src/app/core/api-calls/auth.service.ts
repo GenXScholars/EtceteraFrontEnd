@@ -29,6 +29,6 @@ export class AuthService {
   }
 
   public getUser() {
-    return JSON.parse(sessionStorage.getItem(USER_KEY));
+    return JSON.parse(localStorage.getItem(USER_KEY));
   }
 }
