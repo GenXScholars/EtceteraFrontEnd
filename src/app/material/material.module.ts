@@ -9,19 +9,8 @@ import { MatTabsModule } from '@angular/material/tabs';
 import { MatButtonModule} from '@angular/material/button';
 import { MatDividerModule} from '@angular/material/divider';
 import { MatFormFieldModule } from '@angular/material/form-field';
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 
-
-const materialModules = [
-    MatFormFieldModule,
-    MatButtonModule,
-    MatIconModule,
-    MatCardModule,
-    MatInputModule,
-    MatSelectModule,
-    MatGridListModule,
-    MatTabsModule,
-    MatDividerModule,
-];
 
 
 @NgModule({
@@ -37,6 +26,7 @@ const materialModules = [
     MatGridListModule,
     MatTabsModule,
     MatDividerModule,
+    MatProgressSpinnerModule
 
   ],
   exports:[
@@ -49,6 +39,7 @@ const materialModules = [
     MatGridListModule,
     MatTabsModule,
     MatDividerModule,
+    MatProgressSpinnerModule
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })

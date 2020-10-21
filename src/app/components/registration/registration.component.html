@@ -27,6 +27,7 @@
                     <h2>Create Account</h2>
                     <h5>Kickstart your Vinebill account</h5>
                 </div>
+                <!-- <p style="color:red;" *ngIf="registrationForm.controls.invalid" >Please fill in all values</p> -->
                 <form [formGroup] ="registrationForm" (ngSubmit) = "onSubmit()" class="sl-form">
                   <div class="form-group">
                     <label>First Name</label>
@@ -39,18 +40,19 @@
                   <div class="form-group">
                       <label>Email</label>
                       <input type="email" name="email" placeholder="example@gmail.com" formControlName ="email" [(ngModel)]="user.email" required>
-                      <br>
                       <mat-error style="color:red;" *ngIf="email.invalid && (email.dirty || email.touched)">{{getErrorMessage()}}</mat-error>
                   </div>
 
                   <div class="form-group">
-                    <label>Username</label>
+                    <label>Create A Username</label>
                     <input type="text" placeholder="Jhone" formControlName ="userName" [(ngModel)]="user.username" required>
-                </div>
+                    <mat-error style="color:red;" *ngIf="userName.invalid && (userName.dirty || userName.touched)">{{getErrorMessage()}}</mat-error>
+                  </div>
                   <div class="form-group">
                       <label>Password</label>
                       <input type="password" placeholder="Password" formControlName="password" [(ngModel)]="user.password" required>
-                  </div>
+                      <mat-error style="color:red;" *ngIf="password.invalid && (password.dirty || password.touched)">{{getErrorMessage()}}</mat-error>
+                    </div>
                   <div class="form-group">
                     <label>Confirm Password</label>
                     <input type="password" placeholder="Password" formControlName="ConfirmPassword" required>
@@ -60,16 +62,12 @@
                     <input type="checkbox" class="form-check-input" formControlName="Agree" required>
                     <label class="form-check-label">Agree with <a [routerLink]= "['/policy']">Terms and Conditions</a></label>
                 </div>
-                  <div class="form-check">
-                      <input type="checkbox" class="form-check-input" formControlName="RememberPassword" required>
-                      <label class="form-check-label">Remember Password</label>
-                  </div>
 
                   <br>
-                  <button type="submit" class="btn btn-filled btn-round"><span class="bh"></span> <span>SignUp</span></button>
+                  <button type="submit" class="btn btn-filled btn-round" [disabled]="!password.value || email.invalid || email.hasError('required') || ConfirmPassword.value != password.value || !userName.value" ><span class="bh"></span> <span>SignUp</span></button>
+
                   <p class="notice">Already have an account? <a routerLink = '/login'>Login</a></p>
               </form>
-   <div> {{registrationForm.value | json}} </div>
             </div>
         </div>
     </div>
