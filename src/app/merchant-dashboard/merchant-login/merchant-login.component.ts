@@ -18,7 +18,6 @@ export class MerchantLoginComponent implements OnInit {
   user: User = new User();
   email: FormControl;
   password: FormControl;
-  ConfirmPassword: FormControl;
   loginForm : FormGroup;
   constructor( private router:Router, private toastr: ToastrService, private fb: FormBuilder, private spinner: NgxSpinnerService, private userservice: UserService, private apiServices: ApiHttpService ) { }
 
@@ -34,11 +33,9 @@ export class MerchantLoginComponent implements OnInit {
 
     this.email = new FormControl('', [Validators.required, Validators.email]);
     this.password = new FormControl('', [Validators.required, Validators.email]);
-    this.ConfirmPassword = new FormControl('', [Validators.required, Validators.email]);
     this.loginForm = new FormGroup({
       email:this.email,
-      password:this.password,
-      ConfirmPassword:this.ConfirmPassword
+      password:this.password
     })
   }
   getErrorMessage() {
@@ -48,15 +45,6 @@ export class MerchantLoginComponent implements OnInit {
 
     return this.email.hasError('email') ? 'Not a valid email' : '';
   }
-
-  getPasswordErrorMessage(){
-    if(this.ConfirmPassword.hasError('required')) {
-      return 'you must confirm your password';
-    }
-
-    return 'passwords do not match';
-  }
-
   onSubmit(){
       console.log(this.user);
       this.toastr.info("Welcome back" + " " + this.user.email);
