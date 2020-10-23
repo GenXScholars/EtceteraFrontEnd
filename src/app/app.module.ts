@@ -33,6 +33,7 @@ import { StoreModule } from '@ngrx/store';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { EffectsModule } from '@ngrx/effects';
 import { UserEffects } from './app-store/effects/user.effects';
+import { appEffects, appReducer } from './app-store';
 
 
 @NgModule({
@@ -69,9 +70,8 @@ import { UserEffects } from './app-store/effects/user.effects';
     CoreModule,
     BrowserAnimationsModule,
 
-    StoreModule.forRoot({}, {}),
-    EffectsModule.forRoot([
-      UserEffects]),
+    StoreModule.forRoot(appReducer),
+    EffectsModule.forRoot(appEffects),
 
   ],
   providers: [

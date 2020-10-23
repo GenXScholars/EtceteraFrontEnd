@@ -27,6 +27,12 @@
                     <h2>Create Account</h2>
                     <h5>Kickstart your Vinebill account</h5>
                 </div>
+
+                <div *ngIf="errorMessage">
+                  <div class="alert alert-danger" role="alert">
+                    {{errorMessage}}
+                  </div>
+                </div>
                 <!-- <p style="color:red;" *ngIf="registrationForm.controls.invalid" >Please fill in all values</p> -->
                 <form [formGroup] ="registrationForm" (ngSubmit) = "onSubmit()" class="sl-form">
                   <div class="form-group">

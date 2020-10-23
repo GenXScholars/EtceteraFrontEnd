@@ -5,6 +5,7 @@ export class User {
   firstname?: string;
   lastname?: string;
   password?: string;
+  walletBalance?: string;
   merchant?: string;
   token?: string;
   role?: string

@@ -30,6 +30,12 @@
               <h2>Admin</h2>
               <h5>Login To your Admin Dashboard</h5>
           </div>
+          <hr style="color:blue;"><br>
+          <div *ngIf="errorMessage">
+            <div class="alert alert-danger" role="alert">
+              {{errorMessage}}
+            </div>
+          </div>
           <form [formGroup]="loginForm" (ngSubmit) = "onSubmit()" class="sl-form">
               <div class="form-group">
                   <label>Email</label>

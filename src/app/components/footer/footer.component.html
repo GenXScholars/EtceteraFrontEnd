@@ -3,12 +3,14 @@
     <div class="container">
         <div class="row align-items-center">
             <div class="col-md-8">
-                <h3>Become A Vinebill Partner today</h3>
+                <h3 *ngIf="!isAuthenticated">Become A Vinebill Partner today</h3>
+                <h3 *ngIf="isAuthenticated"> {{user.firsname || merchant.firstname || user.email || merchant.email}} Enjoying your experience??</h3>
 
             </div>
 
             <div class="col-md-4 text-md-right">
-                <a routerLink='/merchant/register' class="btn btn-default">Register Now</a>
+                <a *ngIf="!isAuthenticated" routerLink='/merchant/register' class="btn btn-default">Register Now</a>
+                <a *ngIf="isAuthenticated"  class="btn btn-default">Share On facebook</a>
             </div>
         </div>
     </div>
