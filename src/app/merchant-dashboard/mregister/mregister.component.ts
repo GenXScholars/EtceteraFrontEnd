@@ -1,8 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { Store } from '@ngrx/store';
 import { NgxSpinnerService } from 'ngx-spinner';
+import { Observable } from 'rxjs';
 import { first } from 'rxjs/operators';
+import { SignUp } from 'src/app/app-store/actions/auth.actions';
+import { AppState, selectAuthState } from 'src/app/app-store/app.states';
 import { MerchantService } from 'src/app/core/api-calls/merchant.service';
 import { ApiHttpService } from 'src/app/core/services/api-http.service.service';
 import { User } from 'src/app/models/user-models';
@@ -14,7 +18,8 @@ import { ToastrService } from 'src/app/shared/services/toastr.service';
   styleUrls: ['./mregister.component.scss']
 })
 export class MregisterComponent implements OnInit {
-
+  getState: Observable<any>;
+  errorMessage: string | null;
   user: User = new User();
   firstName: FormControl;
   lastName: FormControl;
@@ -25,11 +30,16 @@ export class MregisterComponent implements OnInit {
   Agree: FormControl;
   RememberPassword: FormControl;
   registrationForm : FormGroup;
-  constructor( private router:Router, private toastr: ToastrService, private fb: FormBuilder, private spinner: NgxSpinnerService, private merchantservice: MerchantService, private apiServices: ApiHttpService ) { }
+  constructor( private router:Router, private toastr: ToastrService, private fb: FormBuilder, private spinner: NgxSpinnerService, private merchantservice: MerchantService, private apiServices: ApiHttpService, private store: Store<AppState> ) { }
 
   ngOnInit(): void {
-    this.spinner.show();
+    this.getState = this.store.select(selectAuthState);
+      // display error mesagges
+      this.getState.subscribe((state) => {
+        this.errorMessage = state.errorMessage;
+      });
 
+    this.spinner.show();
     setTimeout(() => {
       /** spinner ends after 5 seconds */
       this.spinner.hide();
@@ -71,14 +81,23 @@ export class MregisterComponent implements OnInit {
 
     return 'passwords do not match';
   }
-
-  onSubmit(){
-      console.log(this.user);
-      this.toastr.info("Welcome" + " " + this.user.email);
-      this.apiServices.post(this.merchantservice.signUpMerchant(), this.registrationForm.value)
-      .pipe(first ()).subscribe(response =>{
-        console.log(response);
-      })
-    }
+  onSubmit(): void {
+    const payload = {
+      email: this.user.email,
+      firstname: this.user.firstname,
+      lastname: this.user.lastname,
+      walletBalance: this.user.walletBalance,
+      token: this.user.token,
+    };
+    this.store.dispatch(new SignUp(payload));
+  }
+  // onSubmit(){
+  //     console.log(this.user);
+  //     this.toastr.info("Welcome" + " " + this.user.email);
+  //     this.apiServices.post(this.merchantservice.signUpMerchant(), this.registrationForm.value)
+  //     .pipe(first ()).subscribe(response =>{
+  //       console.log(response);
+  //     })
+  //   }
 
 }

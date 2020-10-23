@@ -1,9 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { NavigationStart, Router, NavigationEnd, NavigationCancel, NavigationError, RouterEvent } from '@angular/router';
+import { Store } from '@ngrx/store';
 import { NgxSpinnerService } from 'ngx-spinner';
+import { Observable } from 'rxjs';
 import { filter, first } from 'rxjs/operators';
-import { UserService } from 'src/app/core/api-calls/user.service';
+import { AppState } from 'src/app/app-store/app.states';
+import { AdminService } from 'src/app/core/api-calls/admin.service';
 import { ApiHttpService } from 'src/app/core/services/api-http.service.service';
 import { User } from 'src/app/models/user-models';
 import { ToastrService } from 'src/app/shared/services/toastr.service';
@@ -14,14 +17,15 @@ import { ToastrService } from 'src/app/shared/services/toastr.service';
   styleUrls: ['./admin-login.component.scss']
 })
 export class AdminLoginComponent implements OnInit {
-
+  getState: Observable<any>;
+  errorMessage: string | null;
   navigationStart: NavigationStart;
   loading = true;
   user: User = new User();
   email: FormControl;
   password: FormControl;
   loginForm : FormGroup;
-  constructor( private router:Router, private toastr: ToastrService, private fb: FormBuilder, private spinner: NgxSpinnerService, private userservice: UserService, private apiServices: ApiHttpService ) {
+  constructor( private router:Router, private toastr: ToastrService, private fb: FormBuilder, private spinner: NgxSpinnerService, private adminservice: AdminService, private apiServices: ApiHttpService, private store: Store<AppState> ) {
   //   router.events.pipe(
   //     filter((routerEvent: Event): routerEvent is RouterEvent => routerEvent instanceof RouterEvent)
   //  ).subscribe((routerEvent: Event) => {
@@ -46,8 +50,11 @@ export class AdminLoginComponent implements OnInit {
    }
 
   ngOnInit(): void {
+     // display error mesagges
+     this.getState.subscribe((state) => {
+      this.errorMessage = state.errorMessage;
+    });
     this.spinner.show();
-
     setTimeout(() => {
       /** spinner ends after 5 seconds */
       this.spinner.hide();
@@ -75,13 +82,10 @@ export class AdminLoginComponent implements OnInit {
   }
 
   onSubmit(){
-    if(this.loginForm.invalid){
-      let element = document.getElementById("submitBtn");
-    element.classList.add("disable");
-   }
+
       console.log(this.user);
       this.toastr.info("Welcome back" + " " + this.user.email);
-      this.apiServices.post(this.userservice.loginUser(), this.loginForm.value)
+      this.apiServices.post(this.adminservice.loginAdmin(), this.loginForm.value)
       .pipe(first ()).subscribe(response =>{
         console.log(response);
 

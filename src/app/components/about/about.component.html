@@ -211,8 +211,11 @@
                   <div class="iconBox">
                       <i class="fab fa-superpowers"></i>
                       <h5>24/7 Support</h5>
-                      <p>We're here to help. Have a query and need help ? <a routerLink = '/contact'>Click here</a></p>
-                  </div>
+                      <p> We're here to help. Have a query and need help ? <a style="color: black;" class="btn" routerLink='/contact'>Click here</a></p>
+                      <p *ngIf="isAuthenticated"> {{user.firsname || merchant.firstname || user.email || merchant.email}}  Have a query and need help ? <a style="color: black;" class="btn" routerLink='/contact'>Click here</a></p>
+
+
+                    </div>
               </div>
           </div>
       </div>

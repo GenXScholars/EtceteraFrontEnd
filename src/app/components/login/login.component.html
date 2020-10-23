@@ -34,7 +34,13 @@
               <h2>Login Account</h2>
               <h5>Login into your Vine Dashboard</h5>
           </div>
-          <form [formGroup]="loginForm" (ngSubmit) = "onSubmit()" class="sl-form">
+           <hr style="color:blue;"><br>
+          <div *ngIf="errorMessage">
+            <div class="alert alert-danger" role="alert">
+              {{errorMessage}}
+            </div>
+          </div>
+          <form [formGroup]="loginForm" (ngSubmit) = "onSubmit()" class="sl-form" ngNativeValidate>
               <div class="form-group">
                   <label>Email</label>
                   <input type="email" name="email" placeholder="example@gmail.com" formControlName ="email" [(ngModel)]="user.email" required>

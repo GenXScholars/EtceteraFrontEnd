@@ -7,8 +7,8 @@ import { AdminViewUsersComponent } from './admin-view-users/admin-view-users.com
 import { AdminViewMerchantsComponent } from './admin-view-merchants/admin-view-merchants.component';
 import { SuperAdminViewAdminsComponent } from './super-admin-view-admins/super-admin-view-admins.component';
 import { MaterialModule } from '../material/material.module';
-import { AdminRegistrationComponent } from './admin-registration/admin-registration.component';
 import { AdminRoutingModule } from './admin-routing.module';
+import { SAdminAddAdminsComponent } from './s-admin-add-admins/s-admin-add-admins.component';
 
 @NgModule({
   imports: [
@@ -24,7 +24,7 @@ import { AdminRoutingModule } from './admin-routing.module';
     AdminViewUsersComponent,
     AdminViewMerchantsComponent,
     SuperAdminViewAdminsComponent,
-    AdminRegistrationComponent,
+    SAdminAddAdminsComponent
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })

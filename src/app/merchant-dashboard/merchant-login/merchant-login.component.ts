@@ -1,9 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { Store } from '@ngrx/store';
 import { NgxSpinnerService } from 'ngx-spinner';
+import { Observable } from 'rxjs';
 import { first } from 'rxjs/operators';
-import { UserService } from 'src/app/core/api-calls/user.service';
+import { LogIn } from 'src/app/app-store/actions/auth.actions';
+import { AppState } from 'src/app/app-store/app.states';
 import { ApiHttpService } from 'src/app/core/services/api-http.service.service';
 import { User } from 'src/app/models/user-models';
 import { ToastrService } from 'src/app/shared/services/toastr.service';
@@ -14,16 +17,21 @@ import { ToastrService } from 'src/app/shared/services/toastr.service';
   styleUrls: ['./merchant-login.component.scss']
 })
 export class MerchantLoginComponent implements OnInit {
-
+  getState: Observable<any>;
+  errorMessage: string | null;
   user: User = new User();
   email: FormControl;
   password: FormControl;
   loginForm : FormGroup;
-  constructor( private router:Router, private toastr: ToastrService, private fb: FormBuilder, private spinner: NgxSpinnerService, private userservice: UserService, private apiServices: ApiHttpService ) { }
+  constructor( private router:Router, private toastr: ToastrService, private fb: FormBuilder, private spinner: NgxSpinnerService, private apiServices: ApiHttpService, private store: Store<AppState> ) { }
 
   ngOnInit(): void {
-    this.spinner.show();
+        // display error mesagges
+    this.getState.subscribe((state) => {
+      this.errorMessage = state.errorMessage;
+    });
 
+    this.spinner.show();
     setTimeout(() => {
       /** spinner ends after 5 seconds */
       this.spinner.hide();
@@ -42,23 +50,29 @@ export class MerchantLoginComponent implements OnInit {
     if (this.email.hasError('required')) {
       return 'You must enter a value';
     }
-
     return this.email.hasError('email') ? 'Not a valid email' : '';
   }
-  onSubmit(){
-      console.log(this.user);
-      this.toastr.info("Welcome back" + " " + this.user.email);
-      this.apiServices.post(this.userservice.loginUser(), this.loginForm.value)
-      .pipe(first ()).subscribe(response =>{
-        console.log(response);
-      })
 
-
-        // if(!data){
-        //   this.router.navigate(['/login']);
-        // }
-
-
-    }
+  onSubmit(): void {
+    const payload = {
+      email: this.user.email,
+      firstname: this.user.firstname,
+      lastname: this.user.lastname,
+      walletBalance: this.user.walletBalance,
+      token: this.user.token,
+    };
+    this.store.dispatch(new LogIn(payload));
+  }
+  // onSubmit(){
+  //     console.log(this.user);
+  //     this.toastr.info("Welcome back" + " " + this.user.email);
+  //     this.apiServices.post(this.userservice.loginUser(), this.loginForm.value)
+  //     .pipe(first ()).subscribe(response =>{
+  //       console.log(response);
+  //     })
+  //       // if(!data){
+  //       //   this.router.navigate(['/login']);
+  //       // }
+  //   }
 
 }

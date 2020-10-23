@@ -1,6 +1,4 @@
 import { User } from '../../models/user-models';
-import { Merchant } from '../../models/merchant-models';
-import { Admin } from '../../models/admin-models';
 import { All, AuthActionTypes } from '../actions/auth.actions';
 
 
@@ -9,22 +7,18 @@ export interface State {
   // is a user authenticated?
   isAuthenticated: boolean;
   // if authenticated, there should be a user/admin/merchant object
-  user: User | null;
-  merchant: Merchant | null;
-  admin: Admin | null;
+  user: User;
   // error message
   errorMessage: string | null;
 }
 
-export const initialState: State = {
+export const UinitialState: State = {
   isAuthenticated: false,
   user: null,
-  merchant: null,
-  admin: null,
   errorMessage: null
 }
 
-export function reducer(state = initialState, action: All): State {
+export function UserReducer(state = UinitialState, action: All): State {
   switch (action.type) {
     case AuthActionTypes.LOGIN_SUCCESS: {
       return {
@@ -32,7 +26,10 @@ export function reducer(state = initialState, action: All): State {
         isAuthenticated: true,
         user: {
           token: action.payload.token,
-          email: action.payload.email
+          email: action.payload.email,
+          firstname: action.payload.firstname,
+          walletBalance: action.payload.walletBalance,
+          role: action.payload.role,
         },
         errorMessage: null
       };
@@ -48,8 +45,11 @@ export function reducer(state = initialState, action: All): State {
         ...state,
         isAuthenticated: true,
         user: {
+          username:action.payload.username,
+          firstname:action.payload.firstname,
           token: action.payload.token,
-          email: action.payload.email
+          email: action.payload.email,
+          walletBalance: action.payload.walletBalance,
         },
         errorMessage: null
       }
@@ -59,6 +59,9 @@ export function reducer(state = initialState, action: All): State {
         ...state,
         errorMessage: 'That email is already in use.'
       };
+    }
+    case AuthActionTypes.LOGOUT: {
+      return UinitialState;
     }
     default: {
       return state;
