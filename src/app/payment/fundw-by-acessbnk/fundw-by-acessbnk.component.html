@@ -1,1 +1,33 @@
-<p>fundw-by-acessbnk works!</p>
+<div class="mat-app-background container-fluid py-4">
+  <div class="row">
+  <app-payment-nav style="display: contents;"></app-payment-nav>
+  <div class="col-lg-7 profile-area">
+    <div class="haeder">
+      <h1 class="text-width">Fund from Acces Bank</h1>
+    </div>
+    <form [formGroup] ="fundByAcessBank">
+      <mat-form-field appearance="fill" class="text-width" formControlName ="cardNumber" [(ngModel)]="accessBank.cardNumber" required>
+        <mat-label>0000 0000 000 00</mat-label>
+        <input matInput>
+        <mat-error style="color:red;" *ngIf="cardNumber.invalid && (cardNumber.dirty || cardNumber.touched)">{{getErrorMessage()}}</mat-error>
+      </mat-form-field>
+      <br>
+      <mat-form-field appearance="fill" class="text-width">
+        <mat-label>Input</mat-label>
+        <input matInput>
+      </mat-form-field>
+      <br>
+      <mat-form-field appearance="fill" class="text-width">
+        <mat-label>Input</mat-label>
+        <input matInput>
+      </mat-form-field>
+      <br>
+      <button mat-raised-button color="primary" class="button-width">Fund Wallet</button>
+    </form>
+
+  </div>
+  </div>
+</div>
+
+
+

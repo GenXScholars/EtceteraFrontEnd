@@ -1,44 +1,30 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
-import { Router } from '@angular/router';
+import { FormControl, Validators } from '@angular/forms';
+
 
 @Component({
   selector: 'app-fundw-by-first-bnk',
   templateUrl: './fundw-by-first-bnk.component.html',
   styleUrls: ['./fundw-by-first-bnk.component.scss']
 })
-export class FundwByFirstBnkComponent implements OnInit {
+export class FundwByFirstBnkComponent {
+  email = new FormControl('', [Validators.required, Validators.email]);
+  fName = new FormControl('', [Validators.required, Validators.minLength(2)]);
 
-  email: FormControl
-  message: FormControl
-  paymentForm : FormGroup
-
-  constructor(private router:Router, private fb: FormBuilder){
-
-  }
-
-
-  ngOnInit(){
-    this.email = new FormControl('', [Validators.required, Validators.email]);
-    this.message = new FormControl('', [Validators.required, Validators.email]);
-    this.paymentForm = new FormGroup({
-      email:this.email,
-      message:this.message
-    })
-  }
   getErrorMessage() {
     if (this.email.hasError('required')) {
-      return 'You must enter a value';
+      return 'Please Enter Email';
     }
-
+    else if (this.fName.hasError('required'))
+    {
+       return 'You must enter a value'
+    }
     return this.email.hasError('email') ? 'Not a valid email' : '';
   }
 
-  makePayment(contactForm){
-    // make payment login goes here
-    if(contactForm.invalid){
-      window.alert("please ill in the necessary ields")
-    }
-    window.alert("thank you or shopping with us")
+
+
   }
-}
+
+
+

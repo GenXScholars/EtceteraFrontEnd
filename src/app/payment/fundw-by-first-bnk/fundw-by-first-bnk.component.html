@@ -1,27 +1,28 @@
-<div class="example-container main">
-  <div class="haeder">
+<div class="mat-app-background container-fluid py-4">
+  <div class="row">
+  <app-payment-nav style="display: contents;"></app-payment-nav>
+  <div class="col-lg-7 profile-area">
+    <div class="haeder">
     <h1>fund Wallet from fisrtBnk</h1>
   </div>
   <form>
     <mat-form-field appearance="fill">
-      <mat-label>Input</mat-label>
-      <input matInput>
+      <mat-label>Enter Card Number</mat-label>
+      <input matInput placeholder="pat@example.com" [formControl]="email" required>
+      <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>
     </mat-form-field>
     <br>
     <mat-form-field appearance="fill">
-      <mat-label>Input</mat-label>
-      <input matInput>
-    </mat-form-field>
-    <br>
-    <mat-form-field appearance="fill">
-      <mat-label>Input</mat-label>
-      <input matInput>
+      <mat-label>Enter your email</mat-label>
+      <input matInput placeholder="pat@.com" [formControl]="fName" required>
+      <mat-error *ngIf="fName.invalid">{{getErrorMessage()}}</mat-error>
     </mat-form-field>
     <br>
     <button mat-raised-button color="primary">fund Wallet</button>
   </form>
 
 </div>
+  </div>
 
 
 

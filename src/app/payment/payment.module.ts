@@ -9,18 +9,30 @@ import { GuestPaymentComponent } from './guest-payment/guest-payment.component';
 import { PaymentsRoutingModule } from './payment-routing.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MaterialModule } from '../material/material.module';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import {PaymentNavComponent} from './payment-nav/payment-nav.component';
 
 
 
 @NgModule({
-  declarations: [FundwByCardComponent, FundwByProvidusComponent, FundwByGtBnkComponent, FundwByFirstBnkComponent, FundwByAcessbnkComponent, GuestPaymentComponent],
+  declarations: [
+    FundwByCardComponent,
+    FundwByProvidusComponent,
+    FundwByGtBnkComponent,
+    FundwByFirstBnkComponent,
+    FundwByAcessbnkComponent,
+    GuestPaymentComponent,
+    PaymentNavComponent
+  ],
   imports: [
     CommonModule,
     FormsModule,
     ReactiveFormsModule,
     PaymentsRoutingModule,
-    MaterialModule
+    MaterialModule,
+    MatFormFieldModule
   ],
+
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
 
 })

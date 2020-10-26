@@ -15,12 +15,24 @@ import { TransactionDetailsRoutingModule } from './user-transactions-details/tra
 import { UserWalletComponent } from './user-wallet/user-wallet.component';
 import { UserWalletRoutingModule } from './user-wallet/user-wallet-routing.module';
 import { MaterialModule } from '../material/material.module';
+import { UserAsideComponent } from './user-aside/user-aside.component';
+import { UserNavComponent } from './user-nav/user-nav.component';
 
 
 
 
 @NgModule({
-  declarations: [UserDashboardComponent, UserSettingsComponent, UserTransactionsComponent, UserCardsComponent, UserTransactionsDetailsComponent, UserProfileComponent, UserWalletComponent],
+  declarations: [
+    UserDashboardComponent,
+    UserSettingsComponent,
+    UserTransactionsComponent,
+    UserCardsComponent,
+    UserTransactionsDetailsComponent,
+    UserProfileComponent,
+    UserWalletComponent,
+    UserAsideComponent,
+    UserNavComponent
+  ],
   imports: [
     CommonModule,
     UserRoutingModule,

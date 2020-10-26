@@ -1,72 +1,11 @@
- <!-- Profile bar -->
- <div class="profilebar shadow mt-2 border-2">
-  <div class="container">
-      <div class="row">
-          <div class="col">
-              <div class="balance-area">
-                  <a href="#">
-                      <div class="header-pro-thumb">
-                          <img class="rounded-circle" src="images/profile.jpg" alt="">
-                      </div>
-                      <span class="pl-4 pt-1"><b>Jhone Due</b></span>
-                  </a>
-
-
-              </div>
-          </div>
-          <div class="col">
-              <div class="local-time">
-                  <p><b>Local Time:</b> 12:00PM</p>
-              </div>
-          </div>
-          <div class="col">
-              <div class="local-time">
-                  <p><b>Last Visit:</b>1/12/2020 - 12:00PM</p>
-              </div>
-          </div>
-          <div class="col notify-col text-right">
-              <div class="notify-btn"><a href="profile-notifications.html"><i class="far fa-bell"></i></a></div>
-          </div>
-      </div>
-  </div>
-</div>
-<!-- End Profile bar -->
+<app-user-nav></app-user-nav>
 
 <!-- Admin Content Section  -->
 <div id="content" class="py-4">
   <div class="container">
       <div class="row">
           <!-- Left sidebar -->
-          <aside class="col-lg-3 sidebar">
-              <div class="widget admin-widget p-0">
-                  <div class="Profile-menu">
-                    <ul class="nav secondary-nav">
-                      <li class="nav-item active"><a class="nav-link" routerLink = '/user'><i class="fas fa-tachometer-alt"></i> Dashboard</a></li>
-                      <li class="nav-item"><a class="nav-link" routerLink="/profile"><i class="fab fa-autoprefixer"></i> Account</a></li>
-                      <li class="nav-item"><a class="nav-link" routerLink="/wallet"><i class="fab fa-autoprefixer"></i> Wallet</a></li>
-                      <li class="nav-item"><a class="nav-link" routerLink = '/cards'><i class="fas fa-university"></i> Cards Accounts</a></li>
-                      <li class="nav-item"><a class="nav-link" routerLink = '/transactions'><i class="fas fa-list-ul"></i>Transactions</a></li>
-                      <li class="nav-item"><a class="nav-link" routerLink = '/settings'><i class="fas fa-cog"></i>Setting</a></li>
-                  </ul>
-                  </div>
-              </div>
-
-              <div class="widget admin-widget">
-                  <i class="fas fa-coins admin-overlay-icon"></i>
-                  <h2>Earn $25</h2>
-                  <p>Have questions or concerns regrading</p>
-                  <a href="#" class="btn btn-default btn-center"><span>Refer A friend</span></a>
-              </div>
-
-              <div class="widget admin-widget">
-                  <i class="fas fa-comments admin-overlay-icon"></i>
-                  <h2>Need Help?</h2>
-                  <p>Have questions or concerns regrading your account?<br>
-                      Our experts are here to help!.</p>
-                  <a href="#" class="btn btn-default btn-center"><span>Start Chat</span></a>
-              </div>
-
-          </aside>
+          <app-user-aside style="display: contents;"></app-user-aside>
           <!-- Left Panel End -->
 
           <!-- Middle Panel  -->
