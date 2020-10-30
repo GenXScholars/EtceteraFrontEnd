@@ -1,7 +1,7 @@
 <div class="loaderS">
-  <div *ngIf="loading" class="spinner-border text-primary" role="status">
+  <!-- <div *ngIf="loading" class="spinner-border text-primary" role="status">
     <span class="sr-only">Loading...</span>
-  </div>
+  </div> -->
 </div>
 <!-- Page feature start -->
  <section class="page-feature py-5">
@@ -30,17 +30,22 @@
   <div class="row">
       <div class="col-md-6">
           <div class="content-box">
-  <mat-spinner *ngIf ="loading"></mat-spinner>
+  <!-- <mat-spinner *ngIf ="loading"></mat-spinner> -->
               <h2>Login Account</h2>
               <h5>Login into your Vine Dashboard</h5>
           </div>
            <hr style="color:blue;"><br>
+           <div *ngIf="!loginForm.valid && loginForm.touched" class="disable">
+            <div class="alert alert-danger" role="alert">
+              please fill in all fields
+            </div>
+          </div>
           <div *ngIf="errorMessage">
             <div class="alert alert-danger" role="alert">
               {{errorMessage}}
             </div>
           </div>
-          <form [formGroup]="loginForm" (ngSubmit) = "onSubmit()" class="sl-form" ngNativeValidate>
+          <form [formGroup] ="loginForm" (ngSubmit) = "onSubmit()" class="sl-form" >
               <div class="form-group">
                   <label>Email</label>
                   <input type="email" name="email" placeholder="example@gmail.com" formControlName ="email" [(ngModel)]="user.email" required>
@@ -64,7 +69,7 @@
               <br>
               <button [ngClass]="!loginForm.value ? 'disabled' : ''" [disabled]="!password.value || email.invalid || email.hasError('required')" type="submit" class="btn btn-filled btn-round" id="submitBtn"><span class="bh"></span> <span>Login</span></button>
               <p class="notice">Don’t have an account? <a routerLink='/registration'>Signup Now</a></p>
-              <div *ngIf="loginForm.valid" class="disable">please fill in the required fields</div>
+
 
               <p class="notice"><a routerLink='/forgot-password'>Forgot Password?</a></p>
           </form>

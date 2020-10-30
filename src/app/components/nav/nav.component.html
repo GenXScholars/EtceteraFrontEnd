@@ -62,8 +62,8 @@
     <a routerLink ='/' class="active1 customNav">Home</a>
     <a class="customNav"  routerLink = '/about'>About</a>
     <a class="customNav"  routerLink = '/contact'>Contact</a>
-    <a *ngIf="!isAuthenticated" class="customNav loginBtn" id="loginBtn" routerLink = '/login'><i class="fas fa-user-circle"></i>login</a>
-    <a *ngIf="isAuthenticated" class="customNav loginBtn" id="loginBtn" (click) = "logOut()" ><i class="fas fa-user-circle"></i>logOut</a>
+    <a *ngIf="!isAuthenticated" class="customNav loginBtn" id="loginBtn" routerLink = '/login'><i class="fas fa-user-circle"></i>LOGIN</a>
+    <a *ngIf="isAuthenticated" class="customNav loginBtn" id="loginBtn" (click) = "logOut()" ><i class="fas fa-user-circle"></i>LOGOUT</a>
 
     <a href="javascript:void(0);" class="icon" onclick="myFunction()">
       <i class="fa fa-bars"></i>

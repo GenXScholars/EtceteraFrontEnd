@@ -36,6 +36,11 @@
               {{errorMessage}}
             </div>
           </div>
+          <div *ngIf="!loginForm.valid && loginForm.touched" class="disable">
+            <div class="alert alert-danger" role="alert">
+              please fill in all fields
+            </div>
+          </div>
           <form [formGroup]="loginForm" (ngSubmit) = "onSubmit()" class="sl-form">
               <div class="form-group">
                   <label>Email</label>

@@ -3,18 +3,18 @@ import { Router } from '@angular/router';
 import { Actions, createEffect, Effect, ofType } from '@ngrx/effects';
 // import { Observable } from 'rxjs/Observable';
 import { catchError, exhaustMap, map, tap } from 'rxjs/operators';
-import { UserService } from '../../core/api-calls/user.service';
+import { UserService } from '../../../core/api-calls/user.service';
 import { Observable } from 'rxjs';
-import { AuthActionTypes, LogIn, LogInSuccess, LogInFailure, SignUp } from '../actions/auth.actions';
-import { ApiHttpService } from '../../core/services/api-http.service.service'
+import { AuthActionTypes, LogIn, LogInSuccess, LogInFailure, SignUp } from '../auth.actions';
+import { ApiHttpService } from '../../../core/services/api-http.service.service'
 import { of } from 'rxjs/internal/observable/of';
-import { User } from '../../models/user-models';
+import { User } from '../../../models/user-models';
 
 @Injectable({
   providedIn: 'root'
 })
 export class UserEffects {
-  user: User = new User();
+  user: User = new User;
   constructor(
     private actions: Actions,
     private userService: UserService,
@@ -27,12 +27,9 @@ export class UserEffects {
       ofType(AuthActionTypes.LOGIN),
       exhaustMap( (action: LogIn) =>
         this.apiServices.post(this.userService.loginUser(), action.payload ).pipe(
-          map((user) => {
+          map(user => {
             new LogInSuccess({ user });
-            console.log(user);
-            console.log(new LogInSuccess(user));
-           localStorage.setItem('token', user.token);
-
+            console.log(user.toString());
             this.router.navigateByUrl('/user');
           }),
           catchError(error => of(new LogInFailure({ error })))
@@ -46,7 +43,7 @@ export class UserEffects {
   LogInSuccess: Observable<any> = this.actions.pipe(
     ofType(AuthActionTypes.LOGIN_SUCCESS),
   tap((user) => {
-    localStorage.setItem('token', user.token);
+    localStorage.setItem('token', user.payload.token);
     this.router.navigateByUrl('/user/profile');
   })
 );

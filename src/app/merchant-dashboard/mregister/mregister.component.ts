@@ -39,15 +39,7 @@ export class MregisterComponent implements OnInit {
         this.errorMessage = state.errorMessage;
       });
 
-    this.spinner.show();
-    setTimeout(() => {
-      /** spinner ends after 5 seconds */
-      this.spinner.hide();
-    }, 500);
-
-
-
-    this.firstName = new FormControl('', [Validators.required]);
+      this.firstName = new FormControl('', [Validators.required]);
     this.lastName = new FormControl('', [Validators.required]);
     this.email = new FormControl('', [Validators.required, Validators.email]);
     this.userName = new FormControl('', [Validators.required]);
@@ -65,6 +57,12 @@ export class MregisterComponent implements OnInit {
       ConfirmPassword:this.ConfirmPassword,
       RememberPassword:this.RememberPassword
     })
+    this.spinner.show();
+    setTimeout(() => {
+      /** spinner ends after 5 seconds */
+      this.spinner.hide();
+    }, 500);
+
   }
   getErrorMessage() {
     if (this.email.hasError('required')) {
@@ -81,20 +79,25 @@ export class MregisterComponent implements OnInit {
 
     return 'passwords do not match';
   }
+
+
   onSubmit(): void {
+    console.log(this.getState)
     const payload = {
       email: this.user.email,
       firstname: this.user.firstname,
       lastname: this.user.lastname,
-      walletBalance: this.user.walletBalance,
-      token: this.user.token,
+      username: this.user.username,
+      password: this.user.password
     };
     this.store.dispatch(new SignUp(payload));
+    this.router.navigate(['/user', {payload}]);
   }
+
   // onSubmit(){
   //     console.log(this.user);
   //     this.toastr.info("Welcome" + " " + this.user.email);
-  //     this.apiServices.post(this.merchantservice.signUpMerchant(), this.registrationForm.value)
+  //     this.apiServices.post(this.merchantservice.signUpUser(), this.registrationForm.value)
   //     .pipe(first ()).subscribe(response =>{
   //       console.log(response);
   //     })

@@ -7,6 +7,7 @@ import { MaterialModule } from '../material/material.module';
 import { MerchantLoginComponent } from './merchant-login/merchant-login.component';
 import { EditProfileComponent } from './edit-profile/edit-profile.component';
 import { MregisterComponent } from './mregister/mregister.component';
+import { appEffects, appReducer } from '../app-store/index';
 
 
 
@@ -24,7 +25,9 @@ import { MregisterComponent } from './mregister/mregister.component';
     FormsModule,
     ReactiveFormsModule,
     MerchantRoutingModule,
-    MaterialModule
+    MaterialModule,
+    // StoreModule.forFeature(appReducer),
+    // EffectsModule.forFeature(appEffects),
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })

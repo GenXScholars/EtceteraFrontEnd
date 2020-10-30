@@ -6,7 +6,7 @@ import { NgxSpinnerService } from 'ngx-spinner';
 import { Observable } from 'rxjs';
 import { first } from 'rxjs/operators';
 import { LogIn } from 'src/app/app-store/actions/auth.actions';
-import { AppState } from 'src/app/app-store/app.states';
+import { AppState, selectAuthState } from 'src/app/app-store/app.states';
 import { ApiHttpService } from 'src/app/core/services/api-http.service.service';
 import { User } from 'src/app/models/user-models';
 import { ToastrService } from 'src/app/shared/services/toastr.service';
@@ -27,17 +27,10 @@ export class MerchantLoginComponent implements OnInit {
 
   ngOnInit(): void {
         // display error mesagges
+    this.getState = this.store.select(selectAuthState);
     this.getState.subscribe((state) => {
       this.errorMessage = state.errorMessage;
     });
-
-    this.spinner.show();
-    setTimeout(() => {
-      /** spinner ends after 5 seconds */
-      this.spinner.hide();
-    }, 500);
-
-
 
     this.email = new FormControl('', [Validators.required, Validators.email]);
     this.password = new FormControl('', [Validators.required, Validators.email]);
@@ -45,6 +38,12 @@ export class MerchantLoginComponent implements OnInit {
       email:this.email,
       password:this.password
     })
+
+    this.spinner.show();
+    setTimeout(() => {
+      /** spinner ends after 5 seconds */
+      this.spinner.hide();
+    }, 500);
   }
   getErrorMessage() {
     if (this.email.hasError('required')) {

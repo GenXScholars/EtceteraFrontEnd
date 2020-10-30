@@ -1,3 +1,4 @@
+import { Role } from "./role";
 export class User {
   id?: number;
   username?: string;
@@ -8,5 +9,5 @@ export class User {
   walletBalance?: string;
   merchant?: string;
   token?: string;
-  role?: string
+  role?: Role;
 }

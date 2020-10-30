@@ -7,7 +7,7 @@ export interface State {
   // is a user authenticated?
   isAuthenticated: boolean;
   // if authenticated, there should be a user/admin/merchant object
-  user: User;
+  user: User | null;
   // error message
   errorMessage: string | null;
 }

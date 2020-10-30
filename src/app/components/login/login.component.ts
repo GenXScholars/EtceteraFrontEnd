@@ -22,90 +22,66 @@ import { Observable } from 'rxjs';
 export class LoginComponent implements OnInit {
   getState: Observable<any>;
   errorMessage: string | null;
-  navigationStart: NavigationStart;
-  loading = true;
   user: User = new User();
+  firstName: FormControl;
+  lastName: FormControl;
   email: FormControl;
+  userName: FormControl;
   password: FormControl;
+  ConfirmPassword: FormControl;
+  Agree: FormControl;
+  RememberPassword: FormControl;
   loginForm : FormGroup;
-  constructor( private router:Router, private toastr: ToastrService, private fb: FormBuilder, private spinner: NgxSpinnerService, private userservice: UserService, private apiServices: ApiHttpService, private store: Store<AppState> ) {
-
-    router.events.subscribe((routerEvent: Event)=> {
-      this.checkRouterEvent(routerEvent);
-    });
-   }
-
-   checkRouterEvent(routerEvent: Event): void{
-     if(routerEvent instanceof NavigationStart){
-       this.loading = true;
-     }
-
-     if(routerEvent instanceof NavigationEnd ||
-        routerEvent instanceof NavigationEnd ||
-        routerEvent instanceof NavigationCancel){
-          this.loading = false;
-        }
-       if(routerEvent instanceof NavigationError){
-         this.loading = false;
-       }
-   }
+  constructor( private router:Router, private toastr: ToastrService, private fb: FormBuilder, private spinner: NgxSpinnerService, private userservice: UserService, private apiServices: ApiHttpService, private store: Store<AppState> ) { }
 
   ngOnInit(): void {
-    this.getState = this.store.select(selectAuthState);
-    // display error mesagges
-    this.getState.subscribe((state) => {
-      this.errorMessage = state.errorMessage;
-      this.user = state.user;
-    });
     this.spinner.show();
     setTimeout(() => {
       /** spinner ends after 5 seconds */
       this.spinner.hide();
     }, 500);
-
-
     this.email = new FormControl('', [Validators.required, Validators.email]);
     this.password = new FormControl('', [Validators.required]);
     this.loginForm = new FormGroup({
       email:this.email,
-      password:this.password
+      password:this.password,
+
     })
   }
-
   getErrorMessage() {
     if (this.email.hasError('required')) {
       return 'You must enter a value';
     }
+
     return this.email.hasError('email') ? 'Not a valid email' : '';
   }
-  adClass(){
-    var element = document.getElementById("submitBtn");
-    element.classList.add("disable");
+
+  getPasswordErrorMessage(){
+    if(this.ConfirmPassword.hasError('required')) {
+      return 'you must confirm your password';
+    }
+
+    return 'passwords do not match';
   }
 
+
   onSubmit(): void {
+    console.log(this.getState)
     const payload = {
       email: this.user.email,
-      password: this.user.password,
+      password: this.user.password
     };
     this.store.dispatch(new LogIn(payload));
   }
+
   // onSubmit(){
   //     console.log(this.user);
-  //     this.toastr.info("Welcome back" + " " + this.user.email);
-  //     this.apiServices.post(this.userservice.loginUser(), this.loginForm.value)
+  //     this.toastr.info("Welcome" + " " + this.user.email);
+  //     this.apiServices.post(this.userservice.signUpUser(), this.registrationForm.value)
   //     .pipe(first ()).subscribe(response =>{
   //       console.log(response);
-  //       const payload = {
-  //         email:this.email
-  //       }
-  //       this.router.navigate(['/user/profile']);
-  //       this.store.dispatch(new LogIn(payload))
   //     })
-  //       // if(!data){
-  //       //   this.router.navigate(['/login']);
-  //       // }
-
-
   //   }
+
 }
+
