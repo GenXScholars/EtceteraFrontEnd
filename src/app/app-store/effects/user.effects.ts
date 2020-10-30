@@ -31,7 +31,7 @@ export class UserEffects {
             new LogInSuccess({ user });
             console.log(user);
             console.log(new LogInSuccess(user));
-           localStorage.setItem('token', user.token);
+          //  localStorage.setItem('token', user.token);
 
             this.router.navigateByUrl('/user');
           }),
@@ -46,7 +46,7 @@ export class UserEffects {
   LogInSuccess: Observable<any> = this.actions.pipe(
     ofType(AuthActionTypes.LOGIN_SUCCESS),
   tap((user) => {
-    localStorage.setItem('token', user);    // token to be
+    localStorage.setItem('token', user.token);
     this.router.navigateByUrl('/user/profile');
   })
 );
