@@ -46,7 +46,7 @@ export class UserEffects {
   LogInSuccess: Observable<any> = this.actions.pipe(
     ofType(AuthActionTypes.LOGIN_SUCCESS),
   tap((user) => {
-    localStorage.setItem('token', user.token);
+    localStorage.setItem('token', user);    // token to be added
     this.router.navigateByUrl('/user/profile');
   })
 );
