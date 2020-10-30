@@ -14,24 +14,21 @@ import { User } from 'src/app/models/user-models';
 export class UserDashboardComponent implements OnInit {
   getState: Observable<any>;
   isAuthenticated: false;
-  payload: User;
-  user ;
+  user = null ;
   errorMessage = null;
   constructor(
     private store: Store<AppState>
   ) {
-
+    this.getState = this.store.select(selectAuthState);
   }
 
   ngOnInit() {
-    this.getState = this.store.select(selectAuthState);
     this.getState.subscribe((state) => {
       this.isAuthenticated = state.isAuthenticated;
       this.user = state.user;
       this.errorMessage = state.errorMessage;
     });
     console.log(this.isAuthenticated)
-    console.log(this.store.error)
 
   }
 

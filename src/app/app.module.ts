@@ -32,8 +32,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { StoreModule } from '@ngrx/store';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { EffectsModule } from '@ngrx/effects';
-import { UserEffects } from './app-store/effects/user.effects';
 import { appEffects, appReducer } from './app-store';
+import { MerchantDashboardModule } from './merchant-dashboard/merchant-dashboard.module';
+import { AdminDashboardModule } from './admin-dashboard/admin-dashboard.module';
 
 
 @NgModule({
@@ -68,8 +69,9 @@ import { appEffects, appReducer } from './app-store';
     HttpClientModule,
     NgxSpinnerModule,
     CoreModule,
+    MerchantDashboardModule,
+    AdminDashboardModule,
     BrowserAnimationsModule,
-
     StoreModule.forRoot(appReducer),
     EffectsModule.forRoot(appEffects),
 
